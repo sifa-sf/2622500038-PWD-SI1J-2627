@@ -17,6 +17,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Tombol navigasi: [menambahkan `<button id="navToggle">` (simbol ☰) pada `<header>` di `index.html`, memberi `id="navMenu"` pada `<ul>` menu, serta menambahkan aturan CSS `.header-top`, `.nav-toggle`, `#navMenu`, dan `#navMenu.nav-open` pada `style.css`. Pada media query `min-width: 768px`, menu tampil mendatar dan tombol disembunyikan. Pada tahap ini tombol baru berupa elemen HTML, perilaku buka/tutup menu belum ditambahkan.]
 
+- Event listener navigasi: [memasang `addEventListener` pada `navToggle` untuk menangani klik tombol navigasi.]
+
 #Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
@@ -29,6 +31,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Tombol navigasi (tampilan): [membuka `index.html` pada peramban, atur lebar 400px lewat mode perangkat DevTools, lalu atur lebar 1024px.  awalnya tombol tidak tampil karena `index.html` dan `style.css` belum memiliki tombol `navToggle` maupun aturan CSS-nya; diperbaiki dengan menambahkannya.  Hasil aktual (percobaan pertama): Console menampilkan Uncaught SyntaxError: Identifier 'navMenu' has already been declared, karena const navMenu diketik ulang. Perbaikan: perintah dijalankan tanpa const. Hasil aktual (setelah perbaikan): awalnya menu tersembunyi dan hanya tombol hamburger (☰) yang tampil. `contains` awal bernilai `false`. Setelah `toggle` (hasil `true`), menu Beranda, Tentang, Kontak muncul di bawah judul, dan `contains` berikutnya bernilai `true`. Setelah halaman dimuat ulang, menu tersembunyi kembali. Tidak ada galat lain di Console. Status: Berhasil]
 
+- addEventListener pada navToggle: [enambahkan kode sementara `navToggle.addEventListener` yang menampilkan pesan di Console, lalu mengklik tombol navigasi (☰) pada lebar 400px dengan Console terbuka. pesan "Tombol navigasi diklik." muncul di Console setiap tombol diklik. Hasil aktual: pesan "Tombol navigasi diklik." muncul di Console setiap tombol diklik. Tidak ada galat. Status: Berhasil]
+
 #Riwayat Pengembangan:
 
 - Siapkan baseline P5 dari artefak P4: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
@@ -39,3 +43,5 @@ navigasi, dan validasi formulir sisi klien.
 - Menambahkan elemen formFeedback untuk umpan balik validasi: [menambahkan `<p id="formFeedback"></p>` pada `index.html`. Setelah perbaikan, pengujian `textContent` via Console berhasil dan tidak ada galat baru.]
 
 - Tambah tombol navigasi responsif: [menambahkan tombol `navToggle`, `id="navMenu"`, dan CSS pendukung. Tampilan diuji pada lebar 400px dan 1024px.]
+
+- Tambahkan event listener pada tombol navigasi: [memasang `navToggle.addEventListener("click", ...)` pada `script.js`. Saat tombol navigasi diklik, pesan "Tombol navigasi diklik." muncul di Console. Pengujian berhasil, tidak ada galat.]
