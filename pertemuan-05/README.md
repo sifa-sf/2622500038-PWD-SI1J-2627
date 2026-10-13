@@ -25,6 +25,7 @@ Riwayat Pengembangan:
 
 [Siapkan baseline P5 dari artefak P4]: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
 [Hubungkan JavaScript eksternal ke HTML]: [Menghubungkan script.js ke index.html dan menghapus kode pengujian sementara setelah verifikasi. Pesan pengujian muncul pada Console dan tidak ada galat baru.]
+[Menambahkan id navMenu dan contactForm untuk akses DOM"]: [ditambakan agar saat consule dapat dipilih oleh `getElementById()`.]
 
 Catat perkembangan melalui commit Git yang bermakna. 
 [Pesan commit]: [Ringkasan perubahan dan hasil pengujiannya.] 
