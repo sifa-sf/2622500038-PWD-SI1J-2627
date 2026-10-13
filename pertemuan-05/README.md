@@ -15,6 +15,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Elemen umpan balik: [menambahkan `<p id="formFeedback"></p>` pada `index.html` (di bawah tombol Kirim dan Batal) sebagai tempat pesan hasil validasi. Teksnya diubah melalui JavaScript dengan `textContent`.]
 
+- Tombol navigasi: [menambahkan `<button id="navToggle">` (simbol ☰) pada `<header>` di `index.html`, memberi `id="navMenu"` pada `<ul>` menu, serta menambahkan aturan CSS `.header-top`, `.nav-toggle`, `#navMenu`, dan `#navMenu.nav-open` pada `style.css`. Pada media query `min-width: 768px`, menu tampil mendatar dan tombol disembunyikan. Pada tahap ini tombol baru berupa elemen HTML, perilaku buka/tutup menu belum ditambahkan.]
+
 #Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
@@ -25,7 +27,9 @@ navigasi, dan validasi formulir sisi klien.
 
 - textContent pada formFeedback (via Console):[menjalankan `document.getElementById("formFeedback").textContent = "Pesan pengujian DOM.";` awalnya teks tidak muncul karena elemen `formFeedback` belum ada di `index.html`, lalu saya menambahkan `<p id="formFeedback"></p>` pada `index.html`. Hasil aktual: teks muncul dan hilang sesuai harapan, tidak ada galat di Console. Status: Berhasil.]
 
-#sRiwayat Pengembangan:
+- Tombol navigasi (tampilan): [membuka `index.html` pada peramban, atur lebar 400px lewat mode perangkat DevTools, lalu atur lebar 1024px.  awalnya tombol tidak tampil karena `index.html` dan `style.css` belum memiliki tombol `navToggle` maupun aturan CSS-nya; diperbaiki dengan menambahkannya.  Hasil aktual (percobaan pertama): Console menampilkan Uncaught SyntaxError: Identifier 'navMenu' has already been declared, karena const navMenu diketik ulang. Perbaikan: perintah dijalankan tanpa const. Hasil aktual (setelah perbaikan): awalnya menu tersembunyi dan hanya tombol hamburger (☰) yang tampil. `contains` awal bernilai `false`. Setelah `toggle` (hasil `true`), menu Beranda, Tentang, Kontak muncul di bawah judul, dan `contains` berikutnya bernilai `true`. Setelah halaman dimuat ulang, menu tersembunyi kembali. Tidak ada galat lain di Console. Status: Berhasil]
+
+#Riwayat Pengembangan:
 
 - Siapkan baseline P5 dari artefak P4: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
 [Hubungkan JavaScript eksternal ke HTML]: [Menghubungkan script.js ke index.html dan menghapus kode pengujian sementara setelah verifikasi. Pesan pengujian muncul pada Console dan tidak ada galat baru.]
@@ -33,3 +37,5 @@ navigasi, dan validasi formulir sisi klien.
 - Menambahkan id navMenu dan contactForm untuk akses DOM: [ditambakan agar saat consule dapat dipilih oleh `getElementById()`.]
 
 - Menambahkan elemen formFeedback untuk umpan balik validasi: [menambahkan `<p id="formFeedback"></p>` pada `index.html`. Setelah perbaikan, pengujian `textContent` via Console berhasil dan tidak ada galat baru.]
+
+- Tambah tombol navigasi responsif: [menambahkan tombol `navToggle`, `id="navMenu"`, dan CSS pendukung. Tampilan diuji pada lebar 400px dan 1024px.]
