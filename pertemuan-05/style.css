@@ -24,6 +24,32 @@ header h1 {
   font-size: 28px;
 }
 
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navMenu {
+  display: none;
+}
+
+#navMenu.nav-open {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.nav-toggle {
+  display: block;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
 nav ul {
   display: flex;
   flex-direction: column;
@@ -197,6 +223,15 @@ nav ul {
 
 #contact {
   grid-column: 1 / -1;
+}
+
+#navMenu {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-toggle {
+  display: none;
 }
 
 }
