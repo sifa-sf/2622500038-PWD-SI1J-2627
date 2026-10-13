@@ -19,6 +19,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Event listener navigasi: [memasang `addEventListener` pada `navToggle` untuk menangani klik tombol navigasi.]
 
+- Event submit: [memasang `contactForm.addEventListener` pada `script.js` sebagai pemicu proses validasi formulir. Di dalam fungsi ditambahkan `event.preventDefault()` agar peramban tidak mengirim formulir dan memuat ulang halaman.]
+
 #Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
@@ -33,6 +35,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - addEventListener pada navToggle: [enambahkan kode sementara `navToggle.addEventListener` yang menampilkan pesan di Console, lalu mengklik tombol navigasi (☰) pada lebar 400px dengan Console terbuka. pesan "Tombol navigasi diklik." muncul di Console setiap tombol diklik. Hasil aktual: pesan "Tombol navigasi diklik." muncul di Console setiap tombol diklik. Tidak ada galat. Status: Berhasil]
 
+- Event submit pada contactForm: [memasang listener `submit` yang menampilkan pesan "Form dikirim." di Console, membuka tab Console, mengisi formulir, lalu menekan tombol Kirim. pesan "Form dikirim." muncul di Console. Hasil aktual (percobaan pertama): pesan tidak muncul di Console Penyebabnya tanpa `event.preventDefault()`, formulir dikirim secara bawaan sehingga halaman dimuat ulang dan isi Console terhapus. Perbaikan dengan menambahkan `event.preventDefault();` sebagai baris pertama di dalam fungsi event `submit`. Hasil aktual (setelah perbaikan): pesan "Form dikirim." muncul di Console dan halaman tidak dimuat ulang. Tidak ada galat lain. Status: Berhasil]
+
 #Riwayat Pengembangan:
 
 - Siapkan baseline P5 dari artefak P4: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
@@ -42,6 +46,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Menambahkan elemen formFeedback untuk umpan balik validasi: [menambahkan `<p id="formFeedback"></p>` pada `index.html`. Setelah perbaikan, pengujian `textContent` via Console berhasil dan tidak ada galat baru.]
 
-- Tambah tombol navigasi responsif: [menambahkan tombol `navToggle`, `id="navMenu"`, dan CSS pendukung. Tampilan diuji pada lebar 400px dan 1024px.]
+- Menambahkan tombol navigasi: [menambahkan tombol `navToggle`, `id="navMenu"`, dan CSS pendukung. Tampilan diuji pada lebar 400px dan 1024px.]
 
 - Tambahkan event listener pada tombol navigasi: [memasang `navToggle.addEventListener("click", ...)` pada `script.js`. Saat tombol navigasi diklik, pesan "Tombol navigasi diklik." muncul di Console. Pengujian berhasil, tidak ada galat.]
+
+- Menambahkan penanganan event submit: [memasang event listener `submit` pada `contactForm` dan menambahkan `event.preventDefault()` agar halaman tidak dimuat ulang. Pesan di Console muncul saat tombol Kirim ditekan.]
