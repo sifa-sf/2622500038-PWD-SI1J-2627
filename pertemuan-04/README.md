@@ -3,7 +3,7 @@
 ## Pengembangan
 
 - Perubahan yang dilakukan: [Memisahkan CSS dari "index.html" ke dalam "style.css", menerapkan CSS Box Model pada elemen halaman, menggunakan Flexbox untuk penataan navigasi, menggunakan CSS Grid untuk tata letak utama halaman, serta menerapkan desain web responsif dengan pendekatan mobile-first menggunakan media query. Tata letak dan navigasi disesuaikan agar dapat digunakan dengan baik pada perangkat bergerak dan desktop.]
-- Commit dan push GitHub: [ Melakukan commit terhadap perubahan pada Pertemuan 4 dan melakukan push ke repositori GitHub secara bertahap selama proses pengembangan.]
+- Commit dan push GitHub: [ Melakukan commit terhadap perubahan pada Pertemuan 4 dan melakukan push ke repositori GitHub secara bertahap selama proses pengembangan. Commit yang digunakan: "Terapkan Box Model pada P4", "Terapkan penataan elemen halaman pada P4", "terapkan Flexbox pada navigasi P4", "Terapkan CSS Grid pada tata letak P4", "Terapkan desain web responsif P4", dan "menambahkan dokumentasi README.md".]
 
 ## Pengujian
 
