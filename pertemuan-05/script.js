@@ -5,11 +5,9 @@ const navToggle = document.getElementById("navToggle");
 
 const navMenu = document.getElementById("navMenu");
 
-const contactForm = document.getElementById("contactForm");
-    contactForm.addEventListener("submit", (event) => {
-    event.preventDefault(); 
-    console.log("Form dikirim."); 
-}); 
+contactForm.addEventListener("submit", (event) => {
+  console.log("Form dikirim.");
+});
 
 contactForm.addEventListener("input", () => {
   formFeedback.textContent = "";
@@ -17,4 +15,8 @@ contactForm.addEventListener("input", () => {
 
 contactForm.addEventListener("reset", () => {
   formFeedback.textContent = "";
+});
+
+contactForm.addEventListener("submit", (event) => { 
+console.log(event); 
 });
