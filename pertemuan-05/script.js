@@ -10,3 +10,7 @@ const contactForm = document.getElementById("contactForm");
     event.preventDefault(); 
     console.log("Form dikirim."); 
 }); 
+
+contactForm.addEventListener("input", () => {
+  formFeedback.textContent = "";
+});
