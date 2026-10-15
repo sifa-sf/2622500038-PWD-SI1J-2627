@@ -31,6 +31,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Hamburger menu pada tampilan responsif: [Menggabungkan HTML (`navToggle`, `navMenu`), CSS (menu tersembunyi di mobile, tampil sebagai kolom saat class `nav-open`), dan JavaScript (`classList.toggle("nav-open")`, `aria-expanded`, `aria-label`) dalam satu event handler `click`.]
 
+- Pengambilan nilai input: [Memilih elemen input dengan `getElementById()` dan membaca nilainya di listener `submit` memakai `value.trim()`, `Number()`, `querySelector()`, dan `querySelectorAll()` dengan `:checked`.]
+
 #Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
@@ -57,6 +59,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Hamburger menu: [Mengatur viewport ke ukuran layar kecil, lalu mengklik tombol hamburger dua kali. Hasil aktual: klik pertama menampilkan menu, `aria-expanded="true"`, dan `aria-label="Tutup navigasi"`; klik kedua menyembunyikan menu, `aria-expanded="false"`, dan `aria-label="Buka navigasi"`. Galat: tidak ada.]
 
+- Pengambilan nilai input: [Mengisi formulir lalu menekan "Kirim" dengan `console.log` sementara. Hasil aktual: semua nilai terbaca sesuai isian, `topikDipilih.length` sesuai jumlah checkbox, dan `jenisPesan` bernilai `null` jika radio tidak dipilih. Galat: tidak ada.]
+
 #Riwayat Pengembangan:
 
 - Siapkan baseline P5 dari artefak P4: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
@@ -81,3 +85,5 @@ navigasi, dan validasi formulir sisi klien.
 - Tambahkan preventDefault pada event submit: [Menambahkan `event.preventDefault()` pada listener submit agar halaman tidak dimuat ulang saat formulir dikirim. Hasil pengujian sesuai harapan dan tidak ada galat.]
 
 - Tambahkan hamburger menu responsif: [Menambah CSS menu mobile dan class nav-open, serta menguji integrasi HTML, CSS, dan JavaScript. Hasil sesuai harapan.]
+
+- Ambil nilai input formulir: [Menambah variabel elemen input dan pengambilan nilai pada listener submit. Hasil sesuai harapan.]
