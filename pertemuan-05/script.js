@@ -6,9 +6,11 @@ const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
 
 contactForm.addEventListener("submit", (event) => {
-  console.log("Form dikirim.");
-});
+     event.preventDefault();
 
+  console.log("Form dikirim.");
+  // Proses validasi formulir (dibuat di bagian I).
+});
 contactForm.addEventListener("input", () => {
   formFeedback.textContent = "";
 });
