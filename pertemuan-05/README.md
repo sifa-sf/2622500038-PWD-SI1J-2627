@@ -29,6 +29,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Pencegahan tindakan bawaan submit: [Menambahkan `event.preventDefault()` pada baris pertama fungsi penangan event `submit` di `script.js`. Dengan ini, peramban tidak menjalankan tindakan bawaan pengiriman formulir (memuat ulang halaman), sehingga proses validasi dapat dilakukan oleh JavaScript pada halaman yang sama. Validasi yang akan dibuat pada tahap berikutnya hanya berlangsung di sisi klien dan tidak mengirim atau menyimpan data ke server.]
 
+- Hamburger menu pada tampilan responsif: [Menggabungkan HTML (`navToggle`, `navMenu`), CSS (menu tersembunyi di mobile, tampil sebagai kolom saat class `nav-open`), dan JavaScript (`classList.toggle("nav-open")`, `aria-expanded`, `aria-label`) dalam satu event handler `click`.]
+
 #Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
@@ -52,6 +54,9 @@ navigasi, dan validasi formulir sisi klien.
 - Event object: [Membuka `pertemuan-05/index.html`, membuka tab Console pada Browser DevTools dengan opsi Keep log aktif, mengisi formulir, lalu menekan tombol "Kirim" dengan `console.log(event)` pada listener submit. Hasil aktual: objek `SubmitEvent` tampil pada Console dengan `type` bernilai `submit` dan `target` berupa `form#contactForm`, sehingga parameter `event` terbukti menerima objek event dari peramban. Galat: tidak ada.]
 
 - Pencegahan tindakan bawaan submit: [Menyimpan `script.js`, memuat ulang halaman, mengisi formulir, lalu menekan tombol "Kirim". Hasil aktual: halaman tidak dimuat ulang, isian formulir tetap ada, URL tidak berubah, dan Console menampilkan "Form dikirim.", sehingga `event.preventDefault()` berhasil mencegah tindakan bawaan submit. Galat: tidak ada. Pengujian dengan pesan validasi (data tidak valid dan valid) akan dicatat setelah logika validasi dibuat.]
+
+- Hamburger menu: [Mengatur viewport ke ukuran layar kecil, lalu mengklik tombol hamburger dua kali. Hasil aktual: klik pertama menampilkan menu, `aria-expanded="true"`, dan `aria-label="Tutup navigasi"`; klik kedua menyembunyikan menu, `aria-expanded="false"`, dan `aria-label="Buka navigasi"`. Galat: tidak ada.]
+
 #Riwayat Pengembangan:
 
 - Siapkan baseline P5 dari artefak P4: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
@@ -74,3 +79,5 @@ navigasi, dan validasi formulir sisi klien.
 - Dokumentasikan penggunaan event object: [Menambahkan parameter event pada listener submit dan mengamati event object melalui Console. Hasil pengujian sesuai harapan dan tidak ada galat.]
 
 - Tambahkan preventDefault pada event submit: [Menambahkan `event.preventDefault()` pada listener submit agar halaman tidak dimuat ulang saat formulir dikirim. Hasil pengujian sesuai harapan dan tidak ada galat.]
+
+- Tambahkan hamburger menu responsif: [Menambah CSS menu mobile dan class nav-open, serta menguji integrasi HTML, CSS, dan JavaScript. Hasil sesuai harapan.]
