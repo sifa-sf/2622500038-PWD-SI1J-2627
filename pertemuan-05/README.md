@@ -23,6 +23,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Event input: [Memasang event listener `input` pada `contactForm` di `script.js`. Saat nilai kolom formulir berubah, `formFeedback.textContent` dikosongkan sehingga pesan umpan balik sebelumnya hilang.]
 
+- Event reset: [Memasang event listener `reset` pada `contactForm` di `script.js`. Saat tombol "Batal" ditekan, `formFeedback.textContent` dikosongkan sehingga pesan umpan balik sebelumnya dihapus.]
+
 #Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
@@ -41,6 +43,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Event input: [Membuka `pertemuan-05/index.html`, membuka tab Console pada Browser DevTools, lalu menampilkan pesan uji dengan `document.getElementById("formFeedback").textContent = "Uji pesan";`. Setelah itu, mengisi atau mengubah kolom pada formulir. Hasil aktual: pesan "Uji pesan" hilang setelah kolom formulir diisi, sehingga event input berhasil terdeteksi.]
 
+- Event reset: [Membuka `pertemuan-05/index.html`, mengisi beberapa kolom formulir, lalu menampilkan pesan uji melalui Console dengan `document.getElementById("formFeedback").textContent = "Uji pesan";`. Setelah itu, menekan tombol "Batal". Hasil aktual: isian formulir kembali kosong dan pesan "Uji pesan" hilang, sehingga event reset berhasil ditangani. Galat: tidak ada.]
+
 #Riwayat Pengembangan:
 
 - Siapkan baseline P5 dari artefak P4: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
@@ -57,3 +61,5 @@ navigasi, dan validasi formulir sisi klien.
 - Menambahkan penanganan event submit: [memasang event listener `submit` pada `contactForm` dan menambahkan `event.preventDefault()` agar halaman tidak dimuat ulang. Pesan di Console muncul saat tombol Kirim ditekan.]
 
 - Tambahkan penanganan event input: [Menambahkan event listener input pada formulir kontak untuk mengosongkan pesan umpan balik saat nilai kolom berubah. Hasil pengujian sesuai harapan dan tidak ada galat.]
+
+- Tambahkan penanganan event reset: [Menambahkan event listener reset pada formulir kontak untuk menghapus pesan umpan balik ketika formulir dikembalikan ke keadaan awal. Hasil pengujian sesuai harapan dan tidak ada galat.]
