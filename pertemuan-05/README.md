@@ -33,6 +33,7 @@ navigasi, dan validasi formulir sisi klien.
 
 - Pengambilan nilai input: [Memilih elemen input dengan `getElementById()` dan membaca nilainya di listener `submit` memakai `value.trim()`, `Number()`, `querySelector()`, dan `querySelectorAll()` dengan `:checked`.]
 
+
 #Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
@@ -60,6 +61,9 @@ navigasi, dan validasi formulir sisi klien.
 - Hamburger menu: [Mengatur viewport ke ukuran layar kecil, lalu mengklik tombol hamburger dua kali. Hasil aktual: klik pertama menampilkan menu, `aria-expanded="true"`, dan `aria-label="Tutup navigasi"`; klik kedua menyembunyikan menu, `aria-expanded="false"`, dan `aria-label="Buka navigasi"`. Galat: tidak ada.]
 
 - Pengambilan nilai input: [Mengisi formulir lalu menekan "Kirim" dengan `console.log` sementara. Hasil aktual: semua nilai terbaca sesuai isian, `topikDipilih.length` sesuai jumlah checkbox, dan `jenisPesan` bernilai `null` jika radio tidak dipilih. Galat: tidak ada.]
+- Pemeriksaan kelengkapan data: [mengisi data dasar yang valid, lalu mengosongkan satu kolom wajib secara bergantian (jenis pesan, topik, program studi, pesan, tanggal, semester) dan menekan Kirim. Hasil aktual: semua pesan muncul sesuai harapan, misalnya "Pilih minimal satu topik yang diminati." saat topik belum dipilih. Tidak ada galat di Console.]
+
+- Pemeriksaan format email: [mengisi nama valid, lalu memasukkan tiga bentuk email dan menekan Kirim. Email tanpa @: diharapkan "Masukkan alamat email yang valid.", Email tanpa titik setelah @: diharapkan pesan yang sama, Email `mahasiswa@atmaluhur.ac.id`: diharapkan lolos pemeriksaan email. semuanya sudah sesuai dengan yang diharapkan.]
 
 #Riwayat Pengembangan:
 

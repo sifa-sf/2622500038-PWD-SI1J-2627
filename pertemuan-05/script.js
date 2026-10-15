@@ -24,21 +24,44 @@ navToggle.addEventListener("click", () => {
 
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  const nama = namaInput.value.trim();
-  const email = emailInput.value.trim();
+  
   const semester = Number(semesterInput.value);
+  if (semesterInput.value === "") {
+    formFeedback.textContent = "Semester harus diisi dengan angka 1 sampai 14.";
+    return;
+  }
+
   const tanggal = tanggalInput.value;
+  if (tanggal === "") {
+    formFeedback.textContent = "Tanggal kunjungan harus diisi.";
+    return;
+  }
+
   const jenisPesan = document.querySelector(
     'input[name="jenis_pesan"]:checked',
   );
-  const topikDipilih = document.querySelectorAll('input[name="minat"]:checked');
-  const prodi = prodiInput.value;
-  const pesan = pesanInput.value.trim();
+  if (!jenisPesan) {
+    formFeedback.textContent = "Pilih jenis pesan.";
+    return;
+  }
 
-     console.log(nama, email, semester, tanggal, jenisPesan, topikDipilih.length, prodi, pesan);
-  console.log("Form dikirim.");
-  // Proses validasi formulir (dibuat di bagian I).
+  const topikDipilih = document.querySelectorAll('input[name="minat"]:checked');
+  if (topikDipilih.length === 0) {
+    formFeedback.textContent = "Pilih minimal satu topik yang diminati.";
+    return;
+  }
+
+  const prodi = prodiInput.value;
+  if (prodi === "") {
+    formFeedback.textContent = "Pilih program studi.";
+    return;
+  }
+
+  const pesan = pesanInput.value.trim();
+  if (pesan.length === 0) {
+    formFeedback.textContent = "Pesan harus diisi.";
+    return;
+  }
 });
 
 contactForm.addEventListener("input", () => {
@@ -48,3 +71,9 @@ contactForm.addEventListener("input", () => {
 contactForm.addEventListener("reset", () => {
   formFeedback.textContent = "";
 });
+
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+if (!emailPattern.test(email)) { 
+formFeedback.textContent = "Masukkan alamat email yang valid."; 
+return; 
+}
