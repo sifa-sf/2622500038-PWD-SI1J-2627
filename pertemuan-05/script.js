@@ -24,9 +24,16 @@ navToggle.addEventListener("click", () => {
 
 contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  
+
+  const email = emailInput.value.trim();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    formFeedback.textContent = "Masukkan alamat email yang valid.";
+    return;
+  }
+
   const semester = Number(semesterInput.value);
-  if (semesterInput.value === "") {
+  if (semesterInput.value === "" || semester < 1 || semester > 14) {
     formFeedback.textContent = "Semester harus diisi dengan angka 1 sampai 14.";
     return;
   }
@@ -71,9 +78,3 @@ contactForm.addEventListener("input", () => {
 contactForm.addEventListener("reset", () => {
   formFeedback.textContent = "";
 });
-
-const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
-if (!emailPattern.test(email)) { 
-formFeedback.textContent = "Masukkan alamat email yang valid."; 
-return; 
-}
