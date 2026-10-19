@@ -37,6 +37,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Validasi rentang semester: [Mengubah kondisi pemeriksaan semester menjadi `semesterInput.value === "" || semester < 1 || semester > 14`. Pemeriksaan nilai kosong dilakukan sebelum konversi numerik karena `Number("")` menghasilkan `0`. Pemeriksaan ini belum memastikan nilai berupa bilangan bulat.]
 
+- Validasi input teks nama: [Menambahkan pemeriksaan nama lengkap di listener `submit` pada `script.js`. Nilai diambil dengan `namaInput.value.trim()`, lalu panjangnya diperiksa dengan `nama.length < 3 || nama.length > 50`. Jika tidak sesuai, pesan ditampilkan melalui `formFeedback.textContent` dan `return` menghentikan validasi.]
+
 #Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
@@ -73,6 +75,8 @@ navigasi, dan validasi formulir sisi klien.
 
 - Validasi semester: [Mengirim formulir dengan data lain yang sudah terisi. Hasil aktual: Semester `1` dan `14`: lolos pemeriksaan semester. Semester `0`, `15`, dan kosong: muncul "Semester harus diisi dengan angka 1 sampai 14."]
 
+- Validasi nama: [Mengirim formulir dengan data lain yang sudah valid. Hasil aktual: nama 2 karakter ditolak dengan pesan "Nama lengkap harus diisi 3 sampai 50 karakter."; nama 3 karakter dan 50 karakter lolos; nama lebih dari 50 karakter ditolak dengan pesan yang sama; spasi di awal atau akhir dibuang oleh `trim()` sebelum panjang dihitung. Galat: tidak ada.]
+
 #Riwayat Pengembangan:
 
 - Siapkan baseline P5 dari artefak P4: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
@@ -101,3 +105,5 @@ navigasi, dan validasi formulir sisi klien.
 - Ambil nilai input formulir: [Menambah variabel elemen input dan pengambilan nilai pada listener submit. Hasil sesuai harapan.]
 
 - Tambahkan validasi email dan rentang semester: [Menambahkan pemeriksaan format email dan rentang semester 1 sampai 14 pada listener submit, serta memperbaiki blok email yang berada di luar listener. Seluruh pengujian sesuai harapan.]
+
+- Tambahkan validasi panjang nama: [Menambahkan pemeriksaan nama lengkap 3 sampai 50 karakter pada listener submit. Seluruh pengujian sesuai harapan.]
