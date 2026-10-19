@@ -33,6 +33,10 @@ navigasi, dan validasi formulir sisi klien.
 
 - Pengambilan nilai input: [Memilih elemen input dengan `getElementById()` dan membaca nilainya di listener `submit` memakai `value.trim()`, `Number()`, `querySelector()`, dan `querySelectorAll()` dengan `:checked`.]
 
+- Validasi format email: [Menambahkan `emailPattern` dan `emailPattern.test(email)` di dalam listener `submit` pada `script.js`. Jika format tidak sesuai, pesan ditampilkan melalui `formFeedback.textContent` dan `return` menghentikan validasi. Pola ini hanya pemeriksaan bentuk dasar email, bukan pemeriksaan lengkap seluruh ketentuan teknis alamat email.]
+
+- Validasi rentang semester: [Mengubah kondisi pemeriksaan semester menjadi `semesterInput.value === "" || semester < 1 || semester > 14`. Pemeriksaan nilai kosong dilakukan sebelum konversi numerik karena `Number("")` menghasilkan `0`. Pemeriksaan ini belum memastikan nilai berupa bilangan bulat.]
+
 #Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
@@ -60,9 +64,14 @@ navigasi, dan validasi formulir sisi klien.
 - Hamburger menu: [Mengatur viewport ke ukuran layar kecil, lalu mengklik tombol hamburger dua kali. Hasil aktual: klik pertama menampilkan menu, `aria-expanded="true"`, dan `aria-label="Tutup navigasi"`; klik kedua menyembunyikan menu, `aria-expanded="false"`, dan `aria-label="Buka navigasi"`. Galat: tidak ada.]
 
 - Pengambilan nilai input: [Mengisi formulir lalu menekan "Kirim" dengan `console.log` sementara. Hasil aktual: semua nilai terbaca sesuai isian, `topikDipilih.length` sesuai jumlah checkbox, dan `jenisPesan` bernilai `null` jika radio tidak dipilih. Galat: tidak ada.]
+
 - Pemeriksaan kelengkapan data: [mengisi data dasar yang valid, lalu mengosongkan satu kolom wajib secara bergantian (jenis pesan, topik, program studi, pesan, tanggal, semester) dan menekan Kirim. Hasil aktual: semua pesan muncul sesuai harapan, misalnya "Pilih minimal satu topik yang diminati." saat topik belum dipilih. Tidak ada galat di Console.]
 
 - Pemeriksaan format email: [mengisi nama valid, lalu memasukkan tiga bentuk email dan menekan Kirim. Email tanpa @: diharapkan "Masukkan alamat email yang valid.", Email tanpa titik setelah @: diharapkan pesan yang sama, Email `mahasiswa@atmaluhur.ac.id`: diharapkan lolos pemeriksaan email. semuanya sudah sesuai dengan yang diharapkan.]
+
+- Validasi email: [Mengirim formulir dengan data lain yang sudah terisi. Hasil aktual: Email tanpa `@`: muncul "Masukkan alamat email yang valid", Email dengan domain tanpa titik (`a@b`): muncul pesan yang sama, Email `mahasiswa@atmaluhur.ac.id`: lolos pemeriksaan email.
+
+- Validasi semester: [Mengirim formulir dengan data lain yang sudah terisi. Hasil aktual: Semester `1` dan `14`: lolos pemeriksaan semester. Semester `0`, `15`, dan kosong: muncul "Semester harus diisi dengan angka 1 sampai 14."]
 
 #Riwayat Pengembangan:
 
@@ -90,3 +99,5 @@ navigasi, dan validasi formulir sisi klien.
 - Tambahkan hamburger menu responsif: [Menambah CSS menu mobile dan class nav-open, serta menguji integrasi HTML, CSS, dan JavaScript. Hasil sesuai harapan.]
 
 - Ambil nilai input formulir: [Menambah variabel elemen input dan pengambilan nilai pada listener submit. Hasil sesuai harapan.]
+
+- Tambahkan validasi email dan rentang semester: [Menambahkan pemeriksaan format email dan rentang semester 1 sampai 14 pada listener submit, serta memperbaiki blok email yang berada di luar listener. Seluruh pengujian sesuai harapan.]
