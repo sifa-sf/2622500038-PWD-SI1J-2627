@@ -52,6 +52,7 @@ contactForm.addEventListener("submit", (event) => {
   const jenisPesan = document.querySelector(
     'input[name="jenis_pesan"]:checked',
   );
+
   if (!jenisPesan) {
     formFeedback.textContent = "Pilih jenis pesan.";
     return;
@@ -74,6 +75,11 @@ contactForm.addEventListener("submit", (event) => {
     formFeedback.textContent = "Pesan harus diisi.";
     return;
   }
+
+  if (pesan.length > 300) { 
+  formFeedback.textContent = "Pesan maksimal 300 karakter."; 
+  return; 
+  } 
 });
 
 contactForm.addEventListener("input", () => {
