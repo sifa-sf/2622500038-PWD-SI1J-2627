@@ -105,7 +105,7 @@ Pengendalian pengiriman formulir: [Listener submit memanggil event.preventDefaul
 
 - Select: [Opsi awal ditolak dengan "Pilih program studi."; program studi valid lolos.]
 
-- Textarea: [Kosong dan hanya spasi ditolak dengan "Pesan harus diisi."; 1 dan 300 karakter lolos. Kondisi `pesan.length > 300` tidak diuji lewat pengetikan karena `maxlength="300"` mencegah masukan lebih panjang.]
+- Textarea: [Kosong dan hanya spasi ditolak dengan "Pesan harus diisi."; 1 dan 300 karakter lolos. Kondisi `pesan.length > 300` tidak diuji lewat pengetikan karena maxlength="300" mencegah masukan lebih panjang.]
 
 - Pengendalian submit: [Formulir dikirim dengan satu atau beberapa masukan tidak valid; pesan gagal tampil dan pemeriksaan berhenti pada aturan gagal pertama. Setelah masukan diperbaiki satu per satu dan semua aturan terpenuhi, muncul "Form berhasil divalidasi." Halaman tetap berada pada halaman yang sama dan tidak ada pengiriman data ke peladen.]
 
