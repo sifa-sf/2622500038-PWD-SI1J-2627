@@ -7,37 +7,53 @@ navigasi, dan validasi formulir sisi klien.
 
 #Fitur dan Pengembangan:
 
--  baseline P5: [Menyalin `index.html`, `style.css`, dan `img/foto-profil.jpg` dari artefak P4 ke pertemuan-05/. Belum ada kode JavaScript yang ditambahkan.]
+-  baseline P5: [Menyalin index.html, style.css, dan img/foto-profil.jpg dari artefak P4 ke pertemuan-05/. Belum ada kode JavaScript yang ditambahkan.]
 
-- JavaScript eksternal: [Membuat berkas `script.js` di pertemuan-05/ dan menghubungkannya ke `index.html` dengan menambahkan <script src="script.js"></script> sebelum tag penutup </body>. Kode pengujian sementara "console.log(script.js berhasil dijalankan.);", selanjutnya dihapus dari `script.js` setelah hubungan kedua berkas terverifikasi dan tidak ditemukan galat.]
+- JavaScript eksternal: [Membuat berkas script.js di pertemuan-05/ dan menghubungkannya ke index.html dengan menambahkan <script src="script.js"></script> sebelum tag penutup </body>. Kode pengujian sementara "console.log(script.js berhasil dijalankan.);", selanjutnya dihapus dari script.js setelah hubungan kedua berkas terverifikasi dan tidak ditemukan galat.]
 
-- Penambahan id elemen untuk akses DOM (F.2): [Menambahkan `id="navMenu"` pada daftar navigasi dan `id="contactForm" `pada formulir di index.html agar dapat dipilih dengan `getElementById()`.]
+- Penambahan id elemen untuk akses DOM: [Menambahkan id="navMenu" pada daftar navigasi dan id="contactForm" pada formulir di index.html agar dapat dipilih dengan getElementById().]
 
-- Elemen umpan balik: [menambahkan `<p id="formFeedback"></p>` pada `index.html` (di bawah tombol Kirim dan Batal) sebagai tempat pesan hasil validasi. Teksnya diubah melalui JavaScript dengan `textContent`.]
+- Elemen umpan balik: [menambahkan <p id="formFeedback"></p> pada index.html (di bawah tombol Kirim dan Batal) sebagai tempat pesan hasil validasi.]
 
-- Tombol navigasi: [menambahkan `<button id="navToggle">` (simbol ☰) pada `<header>` di `index.html`, memberi `id="navMenu"` pada `<ul>` menu, serta menambahkan aturan CSS `.header-top`, `.nav-toggle`, `#navMenu`, dan `#navMenu.nav-open` pada `style.css`. Pada media query `min-width: 768px`, menu tampil mendatar dan tombol disembunyikan. Pada tahap ini tombol baru berupa elemen HTML, perilaku buka/tutup menu belum ditambahkan.]
+- Tombol navigasi: [menambahkan `<button id="navToggle">` (simbol ☰) pada header di index.html, memberi id="navMenu" pada menu, serta menambahkan aturan CSS header-top, nav-toggle, #navMenu, dan #navMenu.nav-open pada style.css. Pada media query `min-width: 768px`, menu tampil mendatar dan tombol disembunyikan. Pada tahap ini tombol baru berupa elemen HTML, perilaku buka/tutup menu belum ditambahkan.]
 
-- Event listener navigasi: [memasang `addEventListener` pada `navToggle` untuk menangani klik tombol navigasi.]
+- Event listener navigasi: [memasang addEventListener pada navToggle untuk menangani klik tombol navigasi.]
 
-- Event submit: [memasang `contactForm.addEventListener` pada `script.js` sebagai pemicu proses validasi formulir. Di dalam fungsi ditambahkan `event.preventDefault()` agar peramban tidak mengirim formulir dan memuat ulang halaman.]
+- Event submit: [memasang contactForm.addEventListener pada script.js sebagai pemicu proses validasi formulir. Di dalam fungsi ditambahkan event.preventDefault() agar peramban tidak mengirim formulir dan memuat ulang halaman.]
 
-- Event input: [Memasang event listener `input` pada `contactForm` di `script.js`. Saat nilai kolom formulir berubah, `formFeedback.textContent` dikosongkan sehingga pesan umpan balik sebelumnya hilang.]
+- Event input: [Memasang event listener input pada contactForm di script.js. Saat nilai kolom formulir berubah, formFeedback.textContent dikosongkan sehingga pesan umpan balik sebelumnya hilang.]
 
-- Event reset: [Memasang event listener `reset` pada `contactForm` di `script.js`. Saat tombol "Batal" ditekan, `formFeedback.textContent` dikosongkan sehingga pesan umpan balik sebelumnya dihapus.]
+- Event reset: [Memasang event listener reset pada contactForm di script.js. Saat tombol "Batal" ditekan, formFeedback.textContent` dikosongkan sehingga pesan umpan balik sebelumnya dihapus.]
 
-- Event object: [Menambahkan parameter `event` pada fungsi penangan event `submit` di `script.js` untuk menerima objek event dari peramban. Baris `console.log(event)` digunakan sementara untuk pengamatan dan dihapus setelah pengujian.]
+- Event object: [Menambahkan parameter event pada fungsi penangan event submit di script.js untuk menerima objek event dari peramban. Baris console.log(event) digunakan sementara untuk pengamatan dan dihapus setelah pengujian.]
 
-- Pencegahan tindakan bawaan submit: [Menambahkan `event.preventDefault()` pada baris pertama fungsi penangan event `submit` di `script.js`. Dengan ini, peramban tidak menjalankan tindakan bawaan pengiriman formulir (memuat ulang halaman), sehingga proses validasi dapat dilakukan oleh JavaScript pada halaman yang sama. Validasi yang akan dibuat pada tahap berikutnya hanya berlangsung di sisi klien dan tidak mengirim atau menyimpan data ke server.]
+- Pencegahan tindakan bawaan submit: [Menambahkan event.preventDefault() pada baris pertama fungsi penangan event submit di script.js. Dengan ini, peramban tidak menjalankan tindakan bawaan pengiriman formulir (memuat ulang halaman), sehingga proses validasi dapat dilakukan oleh JavaScript pada halaman yang sama. Validasi yang akan dibuat pada tahap berikutnya hanya berlangsung di sisi klien dan tidak mengirim atau menyimpan data ke server.]
 
-- Hamburger menu pada tampilan responsif: [Menggabungkan HTML (`navToggle`, `navMenu`), CSS (menu tersembunyi di mobile, tampil sebagai kolom saat class `nav-open`), dan JavaScript (`classList.toggle("nav-open")`, `aria-expanded`, `aria-label`) dalam satu event handler `click`.]
+- Hamburger menu pada tampilan responsif: [Menggabungkan HTML (navToggle, navMenu), CSS (menu tersembunyi di mobile, tampil sebagai kolom saat class nav-open), dan JavaScript (classList.toggle("nav-open"), aria-expanded, aria-label) dalam satu event handler `click`.]
 
-- Pengambilan nilai input: [Memilih elemen input dengan `getElementById()` dan membaca nilainya di listener `submit` memakai `value.trim()`, `Number()`, `querySelector()`, dan `querySelectorAll()` dengan `:checked`.]
+- Pengambilan nilai input: [Memilih elemen input dengan getElementById() dan membaca nilainya di listener submit memakai value.trim(), Number(), querySelector(), dan querySelectorAll() dengan :checked.]
 
-- Validasi format email: [Menambahkan `emailPattern` dan `emailPattern.test(email)` di dalam listener `submit` pada `script.js`. Jika format tidak sesuai, pesan ditampilkan melalui `formFeedback.textContent` dan `return` menghentikan validasi. Pola ini hanya pemeriksaan bentuk dasar email, bukan pemeriksaan lengkap seluruh ketentuan teknis alamat email.]
+- Validasi format email: [Menambahkan emailPattern dan emailPattern.test(email) di dalam listener submit pada script.js. Jika format tidak sesuai, pesan ditampilkan melalui formFeedback.textContent dan return menghentikan validasi. Pola ini hanya pemeriksaan bentuk dasar email, bukan pemeriksaan lengkap seluruh ketentuan teknis alamat email.]
 
-- Validasi rentang semester: [Mengubah kondisi pemeriksaan semester menjadi `semesterInput.value === "" || semester < 1 || semester > 14`. Pemeriksaan nilai kosong dilakukan sebelum konversi numerik karena `Number("")` menghasilkan `0`. Pemeriksaan ini belum memastikan nilai berupa bilangan bulat.]
+- Validasi rentang semester: [Mengubah kondisi pemeriksaan semester menjadi semesterInput.value === "" || semester < 1 || semester > 14. Pemeriksaan nilai kosong dilakukan sebelum konversi numerik karena Number("") menghasilkan `0`. Pemeriksaan ini belum memastikan nilai berupa bilangan bulat.]
 
-- Validasi input teks nama: [Menambahkan pemeriksaan nama lengkap di listener `submit` pada `script.js`. Nilai diambil dengan `namaInput.value.trim()`, lalu panjangnya diperiksa dengan `nama.length < 3 || nama.length > 50`. Jika tidak sesuai, pesan ditampilkan melalui `formFeedback.textContent` dan `return` menghentikan validasi.]
+- Validasi input teks nama: [Menambahkan pemeriksaan nama lengkap di listener submit pada script.js. Nilai diambil dengan namaInput.value.trim(), lalu panjangnya diperiksa dengan nama.length < 3 || nama.length > 50. Jika tidak sesuai, pesan ditampilkan melalui formFeedback.textContent dan return menghentikan validasi.]
+
+Validasi email: [Format email diperiksa dengan emailPattern.test(email) pada nilai emailInput.value.trim(). Pola ini hanya pemeriksaan bentuk dasar, bukan jaminan alamat email benar-benar ada. Blok yang semula berada di luar listener submit dipindah ke dalam listener.]
+
+Validasi nilai numerik: [Semester dikonversi dengan Number() dan diperiksa dengan semesterInput.value === "" || semester < 1 || semester > 14. Pemeriksaan kosong dilakukan sebelum konversi karena Number("") bernilai `0`. Bilangan bulat belum dipastikan.]
+
+Validasi tanggal: [Memeriksa tanggalInput.value === "", tanpa pemeriksaan rentang tanggal.]
+
+Validasi radio button: [Memakai querySelector('input[name="jenis_pesan"]:checked'); hasil `null` berarti belum ada pilihan.]
+
+Validasi checkbox: [Memakai querySelectorAll('input[name="minat"]:checked') dan memeriksa length === 0. Aturan minimal satu pilihan adalah keputusan desain P5.]
+
+Validasi select: [Memeriksa prodiInput.value === ""; opsi awal bernilai kosong.]
+
+Validasi textarea: [Pesan diambil dengan trim(), diperiksa tidak kosong dan tidak lebih dari 300 karakter.]
+
+Pengendalian pengiriman formulir: [Listener submit memanggil event.preventDefault(), lalu menjalankan pemeriksaan berurutan. Jika satu pemeriksaan gagal, pesan ditampilkan dan return menghentikan pemeriksaan berikutnya. Jika semua lolos, ditampilkan "Form berhasil divalidasi."]
 
 #Pengujian:
 
@@ -49,33 +65,51 @@ navigasi, dan validasi formulir sisi klien.
 
 - textContent pada formFeedback (via Console):[menjalankan `document.getElementById("formFeedback").textContent = "Pesan pengujian DOM.";` awalnya teks tidak muncul karena elemen `formFeedback` belum ada di `index.html`, lalu saya menambahkan `<p id="formFeedback"></p>` pada `index.html`. Hasil aktual: teks muncul dan hilang sesuai harapan, tidak ada galat di Console. Status: Berhasil.]
 
-- Tombol navigasi (tampilan): [membuka `index.html` pada peramban, atur lebar 400px lewat mode perangkat DevTools, lalu atur lebar 1024px.  awalnya tombol tidak tampil karena `index.html` dan `style.css` belum memiliki tombol `navToggle` maupun aturan CSS-nya; diperbaiki dengan menambahkannya.  Hasil aktual (percobaan pertama): Console menampilkan Uncaught SyntaxError: Identifier 'navMenu' has already been declared, karena const navMenu diketik ulang. Perbaikan: perintah dijalankan tanpa const. Hasil aktual (setelah perbaikan): awalnya menu tersembunyi dan hanya tombol hamburger (☰) yang tampil. `contains` awal bernilai `false`. Setelah `toggle` (hasil `true`), menu Beranda, Tentang, Kontak muncul di bawah judul, dan `contains` berikutnya bernilai `true`. Setelah halaman dimuat ulang, menu tersembunyi kembali. Tidak ada galat lain di Console. Status: Berhasil]
+- Tombol navigasi (tampilan): [membuka index.html pada peramban, atur lebar 400px lewat mode perangkat DevTools, lalu atur lebar 1024px.  awalnya tombol tidak tampil karena index.html dan style.css belum memiliki tombol navToggle maupun aturan CSS-nya; diperbaiki dengan menambahkannya. Hasil aktual: awalnya menu tersembunyi dan hanya tombol hamburger (☰) yang tampil. contains awal bernilai false. Setelah toggle (hasil true), menu Beranda, Tentang, Kontak muncul di bawah judul, dan contains berikutnya bernilai `true`. Setelah halaman dimuat ulang, menu tersembunyi kembali. Tidak ada galat lain di Console.]
 
-- addEventListener pada navToggle: [enambahkan kode sementara `navToggle.addEventListener` yang menampilkan pesan di Console, lalu mengklik tombol navigasi (☰) pada lebar 400px dengan Console terbuka. pesan "Tombol navigasi diklik." muncul di Console setiap tombol diklik. Hasil aktual: pesan "Tombol navigasi diklik." muncul di Console setiap tombol diklik. Tidak ada galat. Status: Berhasil]
+- addEventListener pada navToggle: [Menambahkan kode sementara navToggle.addEventListener yang menampilkan pesan di Console, lalu mengklik tombol navigasi (☰) pada lebar 400px dengan Console terbuka. pesan "Tombol navigasi diklik." muncul di Console setiap tombol diklik. Hasil aktual: pesan "Tombol navigasi diklik." muncul di Console setiap tombol diklik. Tidak ada galat. Status: Berhasil]
 
-- Event submit pada contactForm: [memasang listener `submit` yang menampilkan pesan "Form dikirim." di Console, membuka tab Console, mengisi formulir, lalu menekan tombol Kirim. pesan "Form dikirim." muncul di Console. Hasil aktual (percobaan pertama): pesan tidak muncul di Console Penyebabnya tanpa `event.preventDefault()`, formulir dikirim secara bawaan sehingga halaman dimuat ulang dan isi Console terhapus. Perbaikan dengan menambahkan `event.preventDefault();` sebagai baris pertama di dalam fungsi event `submit`. Hasil aktual (setelah perbaikan): pesan "Form dikirim." muncul di Console dan halaman tidak dimuat ulang. Tidak ada galat lain. Status: Berhasil]
+- Event submit pada contactForm: [memasang listener `submit` yang menampilkan pesan "Form dikirim." di Console, membuka tab Console, mengisi formulir, lalu menekan tombol Kirim. pesan "Form dikirim." muncul di Console. Hasil aktual: pesan "Form dikirim." muncul di Console dan halaman tidak dimuat ulang. Tidak ada galat lain. Status: Berhasil]
 
-- Event input: [Membuka `pertemuan-05/index.html`, membuka tab Console pada Browser DevTools, lalu menampilkan pesan uji dengan `document.getElementById("formFeedback").textContent = "Uji pesan";`. Setelah itu, mengisi atau mengubah kolom pada formulir. Hasil aktual: pesan "Uji pesan" hilang setelah kolom formulir diisi, sehingga event input berhasil terdeteksi.]
+- Event input: [Membuka pertemuan 05, membuka tab Console pada Browser DevTools, lalu menampilkan pesan uji dengan document.getElementById("formFeedback").textContent = "Uji pesan";. Setelah itu, mengisi atau mengubah kolom pada formulir. Hasil aktual: pesan "Uji pesan" hilang setelah kolom formulir diisi, sehingga event input berhasil terdeteksi.]
 
-- Event reset: [Membuka `pertemuan-05/index.html`, mengisi beberapa kolom formulir, lalu menampilkan pesan uji melalui Console dengan `document.getElementById("formFeedback").textContent = "Uji pesan";`. Setelah itu, menekan tombol "Batal". Hasil aktual: isian formulir kembali kosong dan pesan "Uji pesan" hilang, sehingga event reset berhasil ditangani. Galat: tidak ada.]
+- Event reset: [Membuka pertemuan-05, mengisi beberapa kolom formulir, lalu menampilkan pesan uji melalui Console dengan document.getElementById("formFeedback").textContent = "Uji pesan";. Setelah itu, menekan tombol "Batal". Hasil aktual: isian formulir kembali kosong dan pesan "Uji pesan" hilang, sehingga event reset berhasil ditangani.]
 
-- Event object: [Membuka `pertemuan-05/index.html`, membuka tab Console pada Browser DevTools dengan opsi Keep log aktif, mengisi formulir, lalu menekan tombol "Kirim" dengan `console.log(event)` pada listener submit. Hasil aktual: objek `SubmitEvent` tampil pada Console dengan `type` bernilai `submit` dan `target` berupa `form#contactForm`, sehingga parameter `event` terbukti menerima objek event dari peramban. Galat: tidak ada.]
+- Event object: [Membuka pertemuan-05, membuka tab Console pada Browser DevTools dengan opsi Keep log aktif, mengisi formulir, lalu menekan tombol "Kirim" dengan console.log(event) pada listener submit. Hasil aktual: objek SubmitEvent tampil pada Console dengan type bernilai submit dan target berupa form#contactForm, sehingga parameter event terbukti menerima objek event dari peramban.]
 
-- Pencegahan tindakan bawaan submit: [Menyimpan `script.js`, memuat ulang halaman, mengisi formulir, lalu menekan tombol "Kirim". Hasil aktual: halaman tidak dimuat ulang, isian formulir tetap ada, URL tidak berubah, dan Console menampilkan "Form dikirim.", sehingga `event.preventDefault()` berhasil mencegah tindakan bawaan submit. Galat: tidak ada. Pengujian dengan pesan validasi (data tidak valid dan valid) akan dicatat setelah logika validasi dibuat.]
+- Pencegahan tindakan bawaan submit: [Menyimpan script.js, memuat ulang halaman, mengisi formulir, lalu menekan tombol "Kirim". Hasil aktual: halaman tidak dimuat ulang, isian formulir tetap ada, URL tidak berubah, dan Console menampilkan "Form dikirim.", sehingga event.preventDefault() berhasil mencegah tindakan bawaan submit.]
 
-- Hamburger menu: [Mengatur viewport ke ukuran layar kecil, lalu mengklik tombol hamburger dua kali. Hasil aktual: klik pertama menampilkan menu, `aria-expanded="true"`, dan `aria-label="Tutup navigasi"`; klik kedua menyembunyikan menu, `aria-expanded="false"`, dan `aria-label="Buka navigasi"`. Galat: tidak ada.]
+- Hamburger menu: [Mengatur viewport ke ukuran layar kecil, lalu mengklik tombol hamburger dua kali. Hasil aktual: klik pertama menampilkan menu, `aria-expanded="true"`, dan `aria-label="Tutup navigasi"`; klik kedua menyembunyikan menu, `aria-expanded="false"`, dan `aria-label="Buka navigasi"`.]
 
-- Pengambilan nilai input: [Mengisi formulir lalu menekan "Kirim" dengan `console.log` sementara. Hasil aktual: semua nilai terbaca sesuai isian, `topikDipilih.length` sesuai jumlah checkbox, dan `jenisPesan` bernilai `null` jika radio tidak dipilih. Galat: tidak ada.]
+- Pengambilan nilai input: [Mengisi formulir lalu menekan "Kirim" dengan `console.log` sementara. Hasil aktual: semua nilai terbaca sesuai isian, `topikDipilih.length` sesuai jumlah checkbox, dan `jenisPesan` bernilai `null` jika radio tidak dipilih.]
 
-- Pemeriksaan kelengkapan data: [mengisi data dasar yang valid, lalu mengosongkan satu kolom wajib secara bergantian (jenis pesan, topik, program studi, pesan, tanggal, semester) dan menekan Kirim. Hasil aktual: semua pesan muncul sesuai harapan, misalnya "Pilih minimal satu topik yang diminati." saat topik belum dipilih. Tidak ada galat di Console.]
+- Pemeriksaan kelengkapan data: [mengisi data dasar yang valid, lalu mengosongkan satu kolom wajib secara bergantian (jenis pesan, topik, program studi, pesan, tanggal, semester) dan menekan Kirim. Hasil aktual: semua pesan muncul sesuai harapan, misalnya "Pilih minimal satu topik yang diminati." saat topik belum dipilih.]
 
 - Pemeriksaan format email: [mengisi nama valid, lalu memasukkan tiga bentuk email dan menekan Kirim. Email tanpa @: diharapkan "Masukkan alamat email yang valid.", Email tanpa titik setelah @: diharapkan pesan yang sama, Email `mahasiswa@atmaluhur.ac.id`: diharapkan lolos pemeriksaan email. semuanya sudah sesuai dengan yang diharapkan.]
 
-- Validasi email: [Mengirim formulir dengan data lain yang sudah terisi. Hasil aktual: Email tanpa `@`: muncul "Masukkan alamat email yang valid", Email dengan domain tanpa titik (`a@b`): muncul pesan yang sama, Email `mahasiswa@atmaluhur.ac.id`: lolos pemeriksaan email.
+- Validasi email: [Mengirim formulir dengan data lain yang sudah terisi. Hasil aktual: Email tanpa `@`: muncul "Masukkan alamat email yang valid", Email dengan domain tanpa titik (`a@b`): muncul pesan yang sama, Email `mahasiswa@atmaluhur.ac.id`: lolos pemeriksaan email.]
 
 - Validasi semester: [Mengirim formulir dengan data lain yang sudah terisi. Hasil aktual: Semester `1` dan `14`: lolos pemeriksaan semester. Semester `0`, `15`, dan kosong: muncul "Semester harus diisi dengan angka 1 sampai 14."]
 
 - Validasi nama: [Mengirim formulir dengan data lain yang sudah valid. Hasil aktual: nama 2 karakter ditolak dengan pesan "Nama lengkap harus diisi 3 sampai 50 karakter."; nama 3 karakter dan 50 karakter lolos; nama lebih dari 50 karakter ditolak dengan pesan yang sama; spasi di awal atau akhir dibuang oleh `trim()` sebelum panjang dihitung. Galat: tidak ada.]
+
+- Email: [Tanpa `@`, tanpa bagian setelah `@`, dan domain tanpa titik ditolak dengan "Masukkan alamat email yang valid."; `mahasiswa@atmaluhur.ac.id` lolos.]
+
+- Semester: [`1` dan `14` lolos; `0`, `15`, dan kosong ditolak dengan "Semester harus diisi dengan angka 1 sampai 14.]
+
+- Tanggal: [Kosong ditolak dengan "Tanggal kunjungan harus diisi."; tanggal terisi lolos.]
+
+- Radio button: [Tanpa pilihan ditolak dengan "Pilih jenis pesan."; satu pilihan lolos.]
+
+- Checkbox: [Tanpa pilihan ditolak dengan "Pilih minimal satu topik yang diminati."; satu atau lebih pilihan lolos.]
+
+- Select: [Opsi awal ditolak dengan "Pilih program studi."; program studi valid lolos.]
+
+- Textarea: [Kosong dan hanya spasi ditolak dengan "Pesan harus diisi."; 1 dan 300 karakter lolos. Kondisi `pesan.length > 300` tidak diuji lewat pengetikan karena `maxlength="300"` mencegah masukan lebih panjang.]
+
+- Pengendalian submit: [Formulir dikirim dengan satu atau beberapa masukan tidak valid; pesan gagal tampil dan pemeriksaan berhenti pada aturan gagal pertama. Setelah masukan diperbaiki satu per satu dan semua aturan terpenuhi, muncul "Form berhasil divalidasi." Halaman tetap berada pada halaman yang sama dan tidak ada pengiriman data ke peladen.]
+
+Galat: tidak ada, selain perbaikan blok email pada I.7 yang sebelumnya berada di luar listener `submit`.
 
 #Riwayat Pengembangan:
 
