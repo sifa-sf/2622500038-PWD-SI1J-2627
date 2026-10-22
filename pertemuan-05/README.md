@@ -109,7 +109,7 @@ Pengendalian pengiriman formulir: [Listener submit memanggil event.preventDefaul
 
 - Pengendalian submit: [Formulir dikirim dengan satu atau beberapa masukan tidak valid; pesan gagal tampil dan pemeriksaan berhenti pada aturan gagal pertama. Setelah masukan diperbaiki satu per satu dan semua aturan terpenuhi, muncul "Form berhasil divalidasi." Halaman tetap berada pada halaman yang sama dan tidak ada pengiriman data ke peladen.]
 
-Galat: tidak ada, selain perbaikan blok email pada I.7 yang sebelumnya berada di luar listener `submit`.
+`Galat: tidak ada, selain perbaikan blok email pada I.7 yang sebelumnya berada di luar listener `submit`.`
 
 #Riwayat Pengembangan:
 
