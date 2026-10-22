@@ -132,7 +132,7 @@ Pengendalian pengiriman formulir: [Listener submit memanggil event.preventDefaul
 
 - Dokumentasikan penggunaan event object: [Menambahkan parameter event pada listener submit dan mengamati event object melalui Console. Hasil pengujian sesuai harapan dan tidak ada galat.]
 
-- Tambahkan preventDefault pada event submit: [Menambahkan `event.preventDefault()` pada listener submit agar halaman tidak dimuat ulang saat formulir dikirim. Hasil pengujian sesuai harapan dan tidak ada galat.]
+- Tambahkan preventDefault pada event submit: [Menambahkan event.preventDefault() pada listener submit agar halaman tidak dimuat ulang saat formulir dikirim. Hasil pengujian sesuai harapan dan tidak ada galat.]
 
 - Tambahkan hamburger menu responsif: [Menambah CSS menu mobile dan class nav-open, serta menguji integrasi HTML, CSS, dan JavaScript. Hasil sesuai harapan.]
 
