@@ -39,21 +39,21 @@ navigasi, dan validasi formulir sisi klien.
 
 - Validasi input teks nama: [Menambahkan pemeriksaan nama lengkap di listener submit pada script.js. Nilai diambil dengan namaInput.value.trim(), lalu panjangnya diperiksa dengan nama.length < 3 || nama.length > 50. Jika tidak sesuai, pesan ditampilkan melalui formFeedback.textContent dan return menghentikan validasi.]
 
-Validasi email: [Format email diperiksa dengan emailPattern.test(email) pada nilai emailInput.value.trim(). Pola ini hanya pemeriksaan bentuk dasar, bukan jaminan alamat email benar-benar ada. Blok yang semula berada di luar listener submit dipindah ke dalam listener.]
+- Validasi email: [Format email diperiksa dengan emailPattern.test(email) pada nilai emailInput.value.trim(). Pola ini hanya pemeriksaan bentuk dasar, bukan jaminan alamat email benar-benar ada. Blok yang semula berada di luar listener submit dipindah ke dalam listener.]
 
-Validasi nilai numerik: [Semester dikonversi dengan Number() dan diperiksa dengan semesterInput.value === "" || semester < 1 || semester > 14. Pemeriksaan kosong dilakukan sebelum konversi karena Number("") bernilai `0`. Bilangan bulat belum dipastikan.]
+- Validasi nilai numerik: [Semester dikonversi dengan Number() dan diperiksa dengan semesterInput.value === "" || semester < 1 || semester > 14. Pemeriksaan kosong dilakukan sebelum konversi karena Number("") bernilai `0`. Bilangan bulat belum dipastikan.]
 
-Validasi tanggal: [Memeriksa tanggalInput.value === "", tanpa pemeriksaan rentang tanggal.]
+- Validasi tanggal: [Memeriksa tanggalInput.value === "", tanpa pemeriksaan rentang tanggal.]
 
-Validasi radio button: [Memakai querySelector('input[name="jenis_pesan"]:checked'); hasil `null` berarti belum ada pilihan.]
+- Validasi radio button: [Memakai querySelector('input[name="jenis_pesan"]:checked'); hasil `null` berarti belum ada pilihan.]
 
-Validasi checkbox: [Memakai querySelectorAll('input[name="minat"]:checked') dan memeriksa length === 0. Aturan minimal satu pilihan adalah keputusan desain P5.]
+- Validasi checkbox: [Memakai querySelectorAll('input[name="minat"]:checked') dan memeriksa length === 0. Aturan minimal satu pilihan adalah keputusan desain P5.]
 
-Validasi select: [Memeriksa prodiInput.value === ""; opsi awal bernilai kosong.]
+- Validasi select: [Memeriksa prodiInput.value === ""; opsi awal bernilai kosong.]
 
-Validasi textarea: [Pesan diambil dengan trim(), diperiksa tidak kosong dan tidak lebih dari 300 karakter.]
+- Validasi textarea: [Pesan diambil dengan trim(), diperiksa tidak kosong dan tidak lebih dari 300 karakter.]
 
-Pengendalian pengiriman formulir: [Listener submit memanggil event.preventDefault(), lalu menjalankan pemeriksaan berurutan. Jika satu pemeriksaan gagal, pesan ditampilkan dan return menghentikan pemeriksaan berikutnya. Jika semua lolos, ditampilkan "Form berhasil divalidasi."]
+- Pengendalian pengiriman formulir: [Listener submit memanggil event.preventDefault(), lalu menjalankan pemeriksaan berurutan. Jika satu pemeriksaan gagal, pesan ditampilkan dan return menghentikan pemeriksaan berikutnya. Jika semua lolos, ditampilkan "Form berhasil divalidasi."]
 
 #Pengujian:
 
