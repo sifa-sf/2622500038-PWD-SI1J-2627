@@ -119,6 +119,16 @@
           echo "</li>"; 
           } 
           ?>
+        </ol> 
+        <h3>Semester (Perulangan while):</h3> 
+        <ol> 
+          <?php 
+          $nomorSemester = 1; 
+          while ($nomorSemester <= 3) { 
+          echo "<li>Semester " . $nomorSemester . "</li>"; 
+          $nomorSemester++; // operator penugasan 
+          } 
+          ?> 
         </ol>
       </article>
     </section>
