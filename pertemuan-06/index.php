@@ -8,6 +8,11 @@
   </head>
   
 <body>
+  <?php 
+  // Pengujian awal eksekusi PHP. 
+  echo "PHP berhasil dijalankan."; 
+  ?> 
+  
   <header>
     <div class="header-top">
     <h1>Profil Mahasiswa</h1>
