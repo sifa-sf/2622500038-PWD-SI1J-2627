@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" /> 
   </head>
   
-<body>  
+<body>
   <header>
     <div class="header-top">
     <h1>Profil Mahasiswa</h1>
