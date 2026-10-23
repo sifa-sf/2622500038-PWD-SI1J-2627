@@ -230,8 +230,8 @@
 </main>
 
   <footer>
-     <p>&copy; 2026 Sifa Sukma Fira 2622500038</p>
-    </footer>
+    <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p> 
+  </footer>
     <script src="script.js"></script>
   </body>
 </html>
