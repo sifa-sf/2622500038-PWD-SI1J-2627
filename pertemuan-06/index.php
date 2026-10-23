@@ -6,7 +6,7 @@
   $programStudi = "SI"; 
   $tahunAkademik = "2026/2027"; 
   $semester = 1; 
-  $ipk = 3.75; 
+  $ipk = 3.90; 
   $statusAktif = true; 
   $catatanTambahan = null;
   const NAMA_MATA_KULIAH = "Pemrograman Web Dasar"; 
@@ -92,6 +92,7 @@
         <p>Semester: <?php echo $semester . " (" . $keteranganSemester . ")"; ?></p> 
         <p>Sisa semester hingga batas: <?php echo $sisaSemester; ?></p> 
         <p>Pemeriksaan rentang semester: <?php echo $statusSemester; ?></p>
+        <p>IPK: <?php echo number_format($ipk, 2, ',', '.'); ?></p> 
         <p>Saya mahasiswa Program Studi Sistem Informasi.</p>
         <h3>Target Belajar</h3>
         <ol>
