@@ -1,18 +1,17 @@
 <?php 
-// P6: PHP dasar dan pemrograman sisi peladen 
-// Bagian 1: Variabel dan konstanta 
-$nim = "2622500038"; 
-$namaMahasiswa = "Sifa Sukma Fira"; 
-$programStudi = "SI"; 
-$tahunAkademik = "2026/2027"; 
-$semester = 1; 
-$ipk = 3.75; 
-$statusAktif = true; 
-$catatanTambahan = null; 
-const NAMA_MATA_KULIAH = "Pemrograman Web Dasar"; 
-const PROFIL_GITHUB = "sifa-sf"; 
+  // P6: PHP dasar dan pemrograman sisi peladen 
+  // Bagian 1: Variabel dan konstanta 
+  $nim = "2622500038"; 
+  $namaMahasiswa = "Sifa Sukma Fira"; 
+  $programStudi = "SI"; 
+  $tahunAkademik = "2026/2027"; 
+  $semester = 1; 
+  $ipk = 3.75; 
+  $statusAktif = true; 
+  $catatanTambahan = null;
+  const NAMA_MATA_KULIAH = "Pemrograman Web Dasar"; 
+  const PROFIL_GITHUB = "sifa-sf"; 
 ?>
-
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -23,6 +22,10 @@ const PROFIL_GITHUB = "sifa-sf";
   </head>
   
 <body>
+  <header>
+    <div class="header-top">
+    <h1>Profil Mahasiswa</h1>
+    
     <button
       class="nav-toggle"
       id="navToggle"
@@ -47,9 +50,9 @@ const PROFIL_GITHUB = "sifa-sf";
   <main>
     <section id="home">
       <h2>Selamat Datang</h2>
-      <p>Halo, saya <strong><?php echo $namaMahasiswa; ?></strong>. Saya sedang mempelajari matakuliah 
-        <strong><?php print NAMA_MATA_KULIAH; ?></strong> pada tahun akademik <?php echo $tahunAkademik;?>.
-      </p>
+      <p>Halo, saya <strong><?php echo $namaMahasiswa; ?></strong>. Saya sedang mempelajari matakuliah
+      <strong><?php print NAMA_MATA_KULIAH; ?></strong> pada tahun akademik <?php echo $tahunAkademik; 
+      ?>.</p> 
       <img src="img/foto-profil.jpeg" width="100" height="140" alt="Foto profil Sifa Sukma Fira" />
     </section>  
 
@@ -69,9 +72,9 @@ const PROFIL_GITHUB = "sifa-sf";
 
 <section id="contact"> 
   <h2>Kontak</h2>
-  <p>Kunjungi <a  target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
-  </p>
-
+  <p>Kunjungi
+    <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
+  </p> 
   <form id="contactForm" action="index.html" method="get">
     <div class="form-group">
       <label for="nama">Nama Lengkap</label><br>
