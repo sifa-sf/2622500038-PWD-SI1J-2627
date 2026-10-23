@@ -9,9 +9,14 @@
   
 <body>
   <?php 
-  // Pengujian awal eksekusi PHP. 
-  echo "PHP berhasil dijalankan."; 
+  // Komentar satu baris. 
+  echo "Keluaran menggunakan echo."; 
+  /* 
+  Komentar beberapa baris. 
+  Komentar ini tidak ditampilkan pada halaman. 
+  */ 
   ?>
+
   <header>
     <div class="header-top">
     <h1>Profil Mahasiswa</h1>
