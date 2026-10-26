@@ -123,21 +123,15 @@
           } 
           ?>
         </ol> 
-<<<<<<< HEAD
-
         <h3>Semester (Perulangan while):</h3> 
-        
-=======
-        <h3>Semester (Perulangan while):</h3> 
->>>>>>> 83662f1bda28457f20875c56e30105799dd39ce7
         <ol> 
-          <?php 
-          $nomorSemester = 1; 
-          while ($nomorSemester <= 3) { 
-          echo "<li>Semester " . $nomorSemester . "</li>"; 
-          $nomorSemester++; // operator penugasan 
-          } 
-          ?> 
+        <?php 
+        $nomorSemester = 1; 
+        while ($nomorSemester <= 3) { 
+        echo "<li>Semester " . $nomorSemester . "</li>"; 
+        $nomorSemester++; // operator penugasan 
+        } 
+        ?> 
         </ol>
       </article>
     </section>
