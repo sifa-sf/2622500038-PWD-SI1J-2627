@@ -38,6 +38,7 @@
       $fokusProgramStudi = "Belum ditentukan"; 
   }
 ?>
+
 <!DOCTYPE html>
 <html lang="id">
   <head>
@@ -122,7 +123,9 @@
           } 
           ?>
         </ol> 
+
         <h3>Semester (Perulangan while):</h3> 
+        
         <ol> 
           <?php 
           $nomorSemester = 1; 

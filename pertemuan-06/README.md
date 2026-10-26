@@ -1,4 +1,4 @@
-P6 - PHP Dasar dan Pemrograman Sisi Peladen
+# Pertemuan 6 - PHP Dasar dan Pemrograman Sisi Peladen
 
 # Deskripsi
 
@@ -40,7 +40,7 @@ Dokumentasi pengembangan halaman web pada P6, meliputi PHP sisi peladen, variabe
 
 `Galat: tidak ada. Nilai variabel yang diubah saat pengujian sudah dikembalikan ke nilai awal.`
 
-#Riwayat Pengembangan:
+# Riwayat Pengembangan:
 
 - Siapkan baseline dan lingkungan P6: [Menyalin artefak P5, menjalankan Laragon, dan memastikan halaman dapat diakses melalui localhost.]
 

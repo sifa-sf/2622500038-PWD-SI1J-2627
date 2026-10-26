@@ -1,11 +1,11 @@
-P5 - JavaScript Dasar, DOM, Event, dan Validasi Sisi Klien 
+# Pertemuan 5 - JavaScript Dasar, DOM, Event, dan Validasi Sisi Klien 
 
-Deskripsi 
+# Deskripsi 
 
 Dokumentasi pengembangan halaman web pada P5, meliputi JavaScript, DOM, event listener, interaksi 
 navigasi, dan validasi formulir sisi klien. 
 
-#Fitur dan Pengembangan:
+# Fitur dan Pengembangan:
 
 -  baseline P5: [Menyalin index.html, style.css, dan img/foto-profil.jpg dari artefak P4 ke pertemuan-05/. Belum ada kode JavaScript yang ditambahkan.]
 
@@ -55,7 +55,7 @@ navigasi, dan validasi formulir sisi klien.
 
 - Pengendalian pengiriman formulir: [Listener submit memanggil event.preventDefault(), lalu menjalankan pemeriksaan berurutan. Jika satu pemeriksaan gagal, pesan ditampilkan dan return menghentikan pemeriksaan berikutnya. Jika semua lolos, ditampilkan "Form berhasil divalidasi."]
 
-#Pengujian:
+# Pengujian:
 
 - Baseline P5: [Membuka pertemuan-05/index.html di peramban dan memeriksa struktur berkas, tampilan halaman, CSS, dan gambar profil. Hasil aktual: seluruh berkas tersedia, halaman tampil sesuai P4, dan tidak ditemukan masalah.]
 
@@ -111,7 +111,7 @@ navigasi, dan validasi formulir sisi klien.
 
 `Galat: tidak ada, selain perbaikan blok email pada I.7 yang sebelumnya berada di luar listener `submit`.`
 
-#Riwayat Pengembangan:
+# Riwayat Pengembangan:
 
 - Siapkan baseline P5 dari artefak P4: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
 [Hubungkan JavaScript eksternal ke HTML]: [Menghubungkan script.js ke index.html dan menghapus kode pengujian sementara setelah verifikasi. Pesan pengujian muncul pada Console dan tidak ada galat baru.]
