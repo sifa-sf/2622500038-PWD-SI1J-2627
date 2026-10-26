@@ -38,6 +38,25 @@ navigasi, dan validasi formulir sisi klien.
 - Validasi rentang semester: [Mengubah kondisi pemeriksaan semester menjadi semesterInput.value === "" || semester < 1 || semester > 14. Pemeriksaan nilai kosong dilakukan sebelum konversi numerik karena Number("") menghasilkan `0`. Pemeriksaan ini belum memastikan nilai berupa bilangan bulat.]
 
 - Validasi input teks nama: [Menambahkan pemeriksaan nama lengkap di listener submit pada script.js. Nilai diambil dengan namaInput.value.trim(), lalu panjangnya diperiksa dengan nama.length < 3 || nama.length > 50. Jika tidak sesuai, pesan ditampilkan melalui formFeedback.textContent dan return menghentikan validasi.]
+<<<<<<< HEAD
+=======
+
+- Validasi email: [Format email diperiksa dengan emailPattern.test(email) pada nilai emailInput.value.trim(). Pola ini hanya pemeriksaan bentuk dasar, bukan jaminan alamat email benar-benar ada. Blok yang semula berada di luar listener submit dipindah ke dalam listener.]
+
+- Validasi nilai numerik: [Semester dikonversi dengan Number() dan diperiksa dengan semesterInput.value === "" || semester < 1 || semester > 14. Pemeriksaan kosong dilakukan sebelum konversi karena Number("") bernilai `0`. Bilangan bulat belum dipastikan.]
+
+- Validasi tanggal: [Memeriksa tanggalInput.value === "", tanpa pemeriksaan rentang tanggal.]
+
+- Validasi radio button: [Memakai querySelector('input[name="jenis_pesan"]:checked'); hasil `null` berarti belum ada pilihan.]
+
+- Validasi checkbox: [Memakai querySelectorAll('input[name="minat"]:checked') dan memeriksa length === 0. Aturan minimal satu pilihan adalah keputusan desain P5.]
+
+- Validasi select: [Memeriksa prodiInput.value === ""; opsi awal bernilai kosong.]
+
+- Validasi textarea: [Pesan diambil dengan trim(), diperiksa tidak kosong dan tidak lebih dari 300 karakter.]
+
+- Pengendalian pengiriman formulir: [Listener submit memanggil event.preventDefault(), lalu menjalankan pemeriksaan berurutan. Jika satu pemeriksaan gagal, pesan ditampilkan dan return menghentikan pemeriksaan berikutnya. Jika semua lolos, ditampilkan "Form berhasil divalidasi."]
+>>>>>>> 83662f1bda28457f20875c56e30105799dd39ce7
 
 - Validasi email: [Format email diperiksa dengan emailPattern.test(email) pada nilai emailInput.value.trim(). Pola ini hanya pemeriksaan bentuk dasar, bukan jaminan alamat email benar-benar ada. Blok yang semula berada di luar listener submit dipindah ke dalam listener.]
 
@@ -111,7 +130,11 @@ navigasi, dan validasi formulir sisi klien.
 
 `Galat: tidak ada, selain perbaikan blok email pada I.7 yang sebelumnya berada di luar listener `submit`.`
 
+<<<<<<< HEAD
 # Riwayat Pengembangan:
+=======
+#Riwayat Pengembangan:
+>>>>>>> 83662f1bda28457f20875c56e30105799dd39ce7
 
 - Siapkan baseline P5 dari artefak P4: [Menyiapkan dan memverifikasi baseline P5. Seluruh pemeriksaan berhasil.]
 [Hubungkan JavaScript eksternal ke HTML]: [Menghubungkan script.js ke index.html dan menghapus kode pengujian sementara setelah verifikasi. Pesan pengujian muncul pada Console dan tidak ada galat baru.]
