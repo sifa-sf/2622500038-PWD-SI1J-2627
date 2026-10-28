@@ -37,11 +37,15 @@
     default: 
       $fokusProgramStudi = "Belum ditentukan"; 
   }
+    // P7: penggunaan GET 
+  if (isset($_GET['nama'])) { 
+    $nama = $_GET['nama']; 
+    echo "Nama yang diterima: " . htmlspecialchars($nama, ENT_QUOTES, 'UTF-8'); 
+  } 
 ?>
 
 <!DOCTYPE html>
 <html lang="id">
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
