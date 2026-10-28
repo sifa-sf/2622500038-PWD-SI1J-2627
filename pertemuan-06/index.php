@@ -123,8 +123,7 @@
           echo "</li>"; 
           } 
           ?>
-        </ol> 
-        
+        </ol>
         <h3>Semester (Perulangan while):</h3> 
         <ol> 
         <?php 
