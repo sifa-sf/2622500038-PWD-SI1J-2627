@@ -61,7 +61,9 @@ contactForm.addEventListener("submit", (event) => {
     return; 
   } 
  
-  const topikDipilih = document.querySelectorAll('input[name="minat"]:checked'); 
+  const topikDipilih = document.querySelectorAll(
+    'input[name="minat"]:checked, input[name="minat[]"]:checked'); 
+  
   if (topikDipilih.length === 0) { 
     formFeedback.textContent = "Pilih minimal satu topik yang diminati."; 
     return; 
