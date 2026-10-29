@@ -15,7 +15,7 @@
   $batasSemester = 8; 
   $sisaSemester = $batasSemester - $semester;
   $semesterValid = $semester >= 1 && $semester <= $batasSemester; 
-  $statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa"; 
+  $statusSemester = ($semesterValid && $statusAktif) ? "Sesuai rentang" : "Perlu diperiksa";
   // Bagian 3: Percabangan if-elseif-else 
   if ($semester < 3) { 
     $keteranganSemester = "Semester awal"; 
@@ -37,6 +37,7 @@
     default: 
       $fokusProgramStudi = "Belum ditentukan"; 
   }
+  session_start(); 
   
   // P7: penggunaan POST
   $nama = trim((string) ($_POST['nama'] ?? ''));
@@ -117,9 +118,37 @@
       } 
     } 
   }
-?>
 
-<!DOCTYPE html>
+  // P7 
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
+    $_SESSION['pesanKesalahan'] = $pesanKesalahan; 
+  
+    $_SESSION['nama'] = $nama; 
+    $_SESSION['email'] = $email; 
+    $_SESSION['semester'] = $semesterForm; 
+    $_SESSION['tanggal'] = $tanggal; 
+    $_SESSION['jenis_pesan'] = $jenisPesan; 
+    $_SESSION['prodi'] = $prodi; 
+    $_SESSION['minat'] = $minat; 
+    $_SESSION['pesan'] = $pesan; 
+  
+    header('Location: index.php'); 
+    exit; 
+  } 
+
+  $pesanKesalahan = $_SESSION['pesanKesalahan'] ?? '';
+
+  $nama = $_SESSION['nama'] ?? '';
+  $email = $_SESSION['email'] ?? '';
+  $semesterForm = $_SESSION['semester'] ?? '';
+  $tanggal = $_SESSION['tanggal'] ?? date("Y-m-d");
+  $jenisPesan = $_SESSION['jenis_pesan'] ?? '';
+  $prodi = $_SESSION['prodi'] ?? '';
+  $minat = $_SESSION['minat'] ?? '';
+  $pesan = $_SESSION['pesan'] ?? '';
+  ?>
+<!doctype html>
+ 
 <html lang="id">
   <head>
     <meta charset="UTF-8">
@@ -222,6 +251,7 @@
     <p class="form-feedback-error"> 
       <?= htmlspecialchars($pesanKesalahan, ENT_QUOTES, 'UTF-8') ?> 
     </p> 
+    <?php unset($_SESSION['pesanKesalahan']); ?>
   <?php endif; ?> 
   <p>Kunjungi
     <a target="_blank" href="https://github.com/<?= PROFIL_GITHUB ?>">profil GitHub saya</a>.
@@ -312,7 +342,7 @@
     <p id="formFeedback"></p>
 
   </form>
-    <?php if ($_SERVER['REQUEST_METHOD'] === 'POST'): ?> 
+    <?php if (!empty($nama)): ?> 
     <h3>Data yang Diterima Peladen</h3> 
   
     <p>Nama: 
@@ -363,6 +393,6 @@
   <footer>
     <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p> 
   </footer>
-    <!--<script src="script.js"></script>--> 
+    <script src="script.js"></script> 
   </body>
 </html>
