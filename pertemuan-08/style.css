@@ -1,4 +1,14 @@
- * {
+/* ==========================================================
+   style.css - UTS Pemrograman Web Dasar (Blog Pribadi)
+   Mengikuti modul:
+   P3 : selector elemen/class/ID, color, font, margin, padding, border
+   P4 : box-sizing, Flexbox (navigasi), Grid (layout), mobile-first,
+        media query min-width: 768px
+   P5 : hamburger menu (.nav-toggle, #navMenu.nav-open), pesan umpan balik
+   ========================================================== */
+
+/* ---------- P4 D.2 : Box Model ---------- */
+* {
   box-sizing: border-box;
 }
 
@@ -7,187 +17,363 @@ body {
   padding: 12px;
   font-family: Arial, sans-serif;
   color: #111827;
-  background-color: #ffffff;
+  background-color: #eef2f7;
 }
 
-/* Header */
+/* ---------- Layout halaman (HEADER - NAVIGASI - KONTEN - FOOTER) ----------
+   Mobile-first: satu kolom, urutan: header, navigasi, konten, footer.     */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADER (logo + nama website) ---------- */
 header {
-  background-color: #aa5858b6;
+  background-color: #003366;
   color: #ffffff;
   padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #dc6a6a;
+  border: 1px solid #00264d;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand {
   display: flex;
   align-items: center;
-  gap: 16px;
-  justify-content: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
 }
 
 header h1 {
-  text-align: center;
   margin: 0;
   font-size: 28px;
 }
 
-header img {
-  width: auto;
-  height: 60px;
-  border-radius: 0%;
-  object-fit: cover;
-  border: 2px solid #ffffff;
+.tagline {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #cfe0f3;
 }
 
+/* Tombol hamburger (P5 H.2) */
+.nav-toggle {
+  display: block;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ---------- NAVIGASI (daftar menu memakai <ul><li>) ---------- */
+/* Kondisi dasar (layar kecil): menu tersembunyi, dibuka lewat JavaScript */
+#navMenu {
+  display: none;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  margin: 0;
+  list-style: none;
+  height: 100%;
+}
+
+#navMenu.nav-open {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Flexbox pada daftar navigasi (P4 E) */
 nav ul {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   gap: 8px;
-  margin: 0;
-  padding: 0; 
   list-style: none;
 }
 
 nav a {
-  color: #d63e3e;
+  display: block;
+  padding: 10px 12px;
+  color: #003366;
   font-weight: bold;
   text-decoration: none;
+  border: 1px solid transparent;
 }
 
+nav a:hover,
+nav a:focus {
+  background-color: #e6eef8;
+  border-color: #003366;
+}
+
+nav a[aria-current="page"] {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+/* ---------- KONTEN (P4 F: Grid) ---------- */
 main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+  align-content: start;
+  animation: muncul 0.5s ease-out;
 }
 
 section {
   width: 100%;
 }
 
-#home {
-  background-color: #f4f4f4;
-  border: 1px solid #d56f68;
+/* Bagian-bagian konten: Beranda, Profile, Pendaftaran, Artikel */
+#home,
+#about,
+#register,
+#articles {
+  background-color: #ffffff;
+  border: 1px solid #d0d7de;
   padding: 20px;
   margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-#home h2 {
-  color: #000000;
+#register {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+#home h2,
+#about h2,
+#register h2,
+#articles h2 {
+  color: #003366;
   border-bottom: 2px solid #003366;
   padding-bottom: 6px;
   margin-top: 0;
   margin-bottom: 16px;
 }
 
-#home p {
+#home h3,
+#about h3,
+#register h3,
+#articles h3 {
+  color: #1f4e78;
+  margin-bottom: 6px;
+}
+
+#home p,
+#about p,
+#articles p {
   line-height: 1.6;
   margin: 0 0 16px;
 }
 
-#home img {
-  display: flex;
+/* ---------- Gambar ---------- */
+.gambar-utama {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  border: 1px solid #cbd5e1;
+  margin: 0 0 8px;
+}
+
+figure {
+  margin: 0 0 16px;
+}
+
+figcaption {
+  font-size: 14px;
+  color: #475569;
+}
+
+.foto-profil {
+  display: block;
   width: 240px;
   max-width: 100%;
   height: auto;
   border: 1px solid #cbd5e1;
-  align-items: stretch;
+  margin: 0 0 16px;
 }
 
-#about { 
-  background-color: #ffffff; 
-  border: 1px solid #d0d7de; 
-  padding: 20px; 
-  margin: 0;
-  font-family: Arial, sans-serif; 
+/* ---------- Daftar ---------- */
+#home ul,
+#home ol,
+#about ol,
+#articles ul {
+  color: #333333;
+  margin: 8px 0 16px;
+  padding: 8px 24px;
+  border: 1px solid #e6e6e6;
+  line-height: 1.6;
 }
 
-#about h2 { 
-  color: #003366; 
-  border-bottom: 2px solid #003366; 
-  padding-bottom: 6px; 
+/* ---------- Tabel ---------- */
+.tabel-wrap {
+  overflow-x: auto;
+  margin: 0 0 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  color: #1f4e78;
+  padding-bottom: 6px;
+}
+
+th,
+td {
+  border: 1px solid #cbd5e1;
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+thead th {
+  background-color: #003366;
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+/* Tabel biodata: kolom pertama sebagai label */
+.biodata th {
+  width: 38%;
+  background-color: #e6eef8;
+  color: #003366;
+}
+
+/* ---------- Artikel ---------- */
+#articles article {
+  border: 1px solid #e6e6e6;
+  padding: 14px 16px;
+  margin: 0 0 16px;
+}
+
+#articles article h3 {
   margin-top: 0;
-  margin-bottom: 16px; 
 }
 
-#about h3 { 
-  color: #1f4e78; 
-  margin-bottom: 6px; 
+.meta {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 8px;
 }
 
-#about p { 
-  line-height: 1.5;
-  margin: 6px 0; 
-  padding: 6px 0; 
-  border-bottom: 1px solid #e6e6e6; 
+/* ---------- Formulir Pendaftaran (P3 K) ---------- */
+.form-group {
+  margin: 12px 0;
 }
 
-#about ol { 
-  color: #333333; 
-  margin: 8px 0; 
-  padding: 8px 24px; 
-  border: 1px solid #e6e6e6; 
-} 
+#register label {
+  color: #1f2937;
+  font-weight: bold;
+}
 
-#contact { 
-  background-color: #f8fafc; 
-  border: 1px solid #cbd5e1; 
-  padding: 20px; 
+#register fieldset {
+  border: none;
+  padding: 0;
   margin: 0;
-  font-family: Arial, sans-serif; 
-  grid-column: 1 / -1;
 }
 
-#contact h2 { 
-  color: #003366; 
-  border-bottom: 2px solid #003366; 
-  padding-bottom: 6px; 
-  margin-top: 0;
-  margin-bottom: 16px; 
+#register legend {
+  padding: 0;
+  font-weight: bold;
+  color: #1f2937;
 }
 
-.form-group { 
-  margin: 12px 0; 
+#register label.pilihan {
+  font-weight: normal;
+  margin-right: 12px;
 }
 
-#contact label { 
-  color: #1f2937; 
-  font-weight: bold; 
-} 
-
-.input-form { 
-  background-color: #ffffff; 
-  color: #111827; 
-  font-family: Arial, sans-serif; 
-  font-size: 16px; 
-  padding: 8px; 
-  margin: 4px 0; 
-  border: 1px solid #94a3b8; 
+.input-form {
   width: 100%;
   max-width: 100%;
+  background-color: #ffffff;
+  color: #111827;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #94a3b8;
 }
 
-#contact textarea { 
+#register textarea {
   min-height: 80px;
   resize: vertical;
 }
 
-#contact button { 
+#register button {
+  background-color: #003366;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 14px;
+  margin: 8px 6px 0 0;
+  border: 1px solid #003366;
   cursor: pointer;
-  background-color: #003366; 
-  color: #ffffff; 
-  font-weight: bold; 
-  padding: 8px 14px; 
-  margin: 8px 6px 0 0; 
-  border: 1px solid #003366; 
-} 
+}
 
-/* Footer */
-  footer {
-  background-color: #aa5858b6;
+#register button[type="reset"] {
+  background-color: #ffffff;
+  color: #003366;
+}
+
+/* Umpan balik validasi (P5 J dan P7 F.6) */
+.form-feedback-error {
+  color: #c62828;
+}
+
+.form-feedback-success {
+  color: #2e7d32;
+}
+
+#formFeedback {
+  min-height: 1.4em;
+  font-weight: bold;
+}
+
+/* Hasil data yang diterima peladen (P7) */
+.hasil-data {
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  padding: 14px 16px;
+  margin-top: 20px;
+}
+
+.hasil-data h3 {
+  margin-top: 0;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background-color: #003366;
   color: #ffffff;
   text-align: center;
   padding: 14px 20px;
-  margin-top: 20px;
   border: 1px solid #00264d;
 }
 
@@ -195,21 +381,64 @@ footer p {
   margin: 0;
 }
 
+/* ---------- Animasi ringan ---------- */
+@keyframes muncul {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none;
+  }
+}
+
+/* ==========================================================
+   Layout untuk viewport >= 768px (P4 G.3 dan G.4)
+   Sesuai soal UTS:
+        HEADER
+     NAVIGASI | KONTEN
+        FOOTER
+   ========================================================== */
 @media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 230px 1fr;
+    grid-template-areas:
+      "header header"
+      "nav    main"
+      "footer footer";
+    align-items: stretch;
+  }
 
-/* aturan CSS untuk viewport dengan lebar minimal 768px */
-main {
-  grid-template-columns: 1fr 1fr;
-}
+  header {
+    grid-area: header;
+  }
 
-nav ul {
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-}
+  nav {
+    grid-area: nav;
+  }
 
-#contact {
-  grid-column: 1 / -1;
-}
+  main {
+    grid-area: main;
+  }
 
+  footer {
+    grid-area: footer;
+  }
+
+  /* Menu selalu tampil sebagai kolom di sisi kiri, tombol hamburger hilang */
+  #navMenu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
 }
