@@ -1,15 +1,11 @@
 <?php
-// ==========================================================
-// artikel.php - Halaman ARTIKEL (menu tambahan)
-// ==========================================================
 
-// ----- DATA DIRI (ubah sesuai identitas Anda; sama di semua halaman) -----
 const NIM = "2622500038";
 const NAMA_LENGKAP = "Sifa Sukma Fira";
 const KELAS = "SI1J";
 const NAMA_WEBSITE = "Kelekak Bangka";
 const TAGLINE = "Mengenal Kelekak Bangka";
-// -------------------------------------------------------------------------
+
 ?>
 <!doctype html>
 <html lang="id">
@@ -22,7 +18,7 @@ const TAGLINE = "Mengenal Kelekak Bangka";
 <body>
   <div class="layout">
 
-    <!-- ================= HEADER: logo + nama website ================= -->
+    
     <header>
       <div class="header-top">
         <div class="brand">
@@ -44,7 +40,7 @@ const TAGLINE = "Mengenal Kelekak Bangka";
       </div>
     </header>
 
-    <!-- ================= NAVIGASI: menu memakai tag list ================= -->
+    
     <nav aria-label="Navigasi utama">
       <ul id="navMenu">
         <li><a href="index.php">Beranda</a></li>
@@ -54,7 +50,7 @@ const TAGLINE = "Mengenal Kelekak Bangka";
       </ul>
     </nav>
 
-    <!-- ================= KONTEN ================= -->
+    
     <main>
       <section id="articles">
         <h2>Artikel Terbaru</h2>
@@ -90,7 +86,7 @@ Kegiatan tersebut juga menjadi kesempatan untuk menumbuhkan rasa cinta terhadap 
       </section>
     </main>
 
-    <!-- ================= FOOTER ================= -->
+    
     <footer>
       <p>&copy;<?= NIM ?>_<?= NAMA_LENGKAP ?>_<?= KELAS ?>_ UTS Pemrograman Web Dasar.</p>
     </footer>

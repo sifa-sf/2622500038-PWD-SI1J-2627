@@ -91,7 +91,7 @@ switch ($programStudi) {
       </ul>
     </nav>
 
-    <!-- ================= KONTEN ================= -->
+  
     <main>
       <section id="about">
         <h2>Foto</h2>
@@ -184,7 +184,6 @@ switch ($programStudi) {
       </section>
     </main>
 
-    <!-- ================= FOOTER ================= -->
     <footer>
       <p>&copy;<?= NIM ?>_<?= NAMA_LENGKAP ?>_<?= KELAS ?>_ UTS Pemrograman Web Dasar.</p>
     </footer>

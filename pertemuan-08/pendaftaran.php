@@ -1,21 +1,13 @@
 <?php
-// ==========================================================
-// pendaftaran.php - Halaman PENDAFTARAN (formulir)
-// P3 : formulir HTML (>= 5 tipe input, label, name, id, validasi HTML)
-// P5 : validasi sisi klien (script.js)
-// P7 : POST, validasi sisi peladen, htmlspecialchars, session, PRG
-// ==========================================================
 session_start();
 
-// ----- DATA DIRI (ubah sesuai identitas Anda; sama di semua halaman) -----
+
 const NIM = "2622500038";
 const NAMA_LENGKAP = "Sifa Sukma Fira";
 const KELAS = "SI1J";
 const NAMA_WEBSITE = "Kelekak Bangka";
 const TAGLINE = "Mengenal Kelekak Bangka";
-// -------------------------------------------------------------------------
 
-// ---------- P7 F.5: normalisasi data masukan (sebelum validasi) ----------
 $nama = trim((string) ($_POST['nama'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
 $semesterForm = trim((string) ($_POST['semester'] ?? ''));
@@ -27,7 +19,6 @@ $minat = $_POST['minat'] ?? [];
 
 $pesanKesalahan = '';
 
-// ---------- P7 F.2 - F.4: validasi sisi peladen (hanya untuk POST) ----------
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // F.2 kelengkapan data
@@ -95,7 +86,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   }
 
-  // ---------- P7 G.2: simpan ke session lalu alihkan (Post-Redirect-Get) ----------
   $_SESSION['pesanKesalahan'] = $pesanKesalahan;
   $_SESSION['valid'] = ($pesanKesalahan === '');
   $_SESSION['pesanSukses'] = ($pesanKesalahan === '') ? 'Pendaftaran berhasil dikirim.' : '';
@@ -111,7 +101,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   exit;
 }
 
-// ---------- P7 G.2: ambil kembali data dari session setelah pengalihan ----------
 $pesanKesalahan = $_SESSION['pesanKesalahan'] ?? '';
 $pesanSukses = $_SESSION['pesanSukses'] ?? '';
 $dataValid = $_SESSION['valid'] ?? false;
@@ -124,8 +113,6 @@ $prodi = $_SESSION['prodi'] ?? '';
 $minat = $_SESSION['minat'] ?? [];
 $alasan = $_SESSION['alasan'] ?? '';
 
-// Isian formulir: jika data tadi tidak valid, isian ditampilkan kembali;
-// jika valid, formulir dikosongkan dan tanggal diisi hari ini.
 $isiNama = $dataValid ? '' : $nama;
 $isiEmail = $dataValid ? '' : $email;
 $isiSemester = $dataValid ? '' : $semesterForm;
@@ -146,7 +133,7 @@ $isiAlasan = $dataValid ? '' : $alasan;
 <body>
   <div class="layout">
 
-    <!-- ================= HEADER: logo + nama website ================= -->
+    
     <header>
       <div class="header-top">
         <div class="brand">
@@ -168,7 +155,6 @@ $isiAlasan = $dataValid ? '' : $alasan;
       </div>
     </header>
 
-    <!-- ================= NAVIGASI: menu memakai tag list ================= -->
     <nav aria-label="Navigasi utama">
       <ul id="navMenu">
         <li><a href="index.php">Beranda</a></li>
@@ -178,7 +164,6 @@ $isiAlasan = $dataValid ? '' : $alasan;
       </ul>
     </nav>
 
-    <!-- ================= KONTEN ================= -->
     <main>
       <section id="register">
         <h2>Pendaftaran Anggota Komunitas</h2>
@@ -350,7 +335,6 @@ $isiAlasan = $dataValid ? '' : $alasan;
       </section>
     </main>
 
-    <!-- ================= FOOTER ================= -->
     <footer>
       <p>&copy;<?= NIM ?>_<?= NAMA_LENGKAP ?>_<?= KELAS ?>_ UTS Pemrograman Web Dasar.</p>
     </footer>

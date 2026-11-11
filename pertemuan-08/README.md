@@ -1,6 +1,10 @@
 # UTS Pemrograman Web Dasar - Website "Kelekak Bangka"
 
-Nama: Sifa Sukma Fira | NIM: 2622500038 | Kelas: SI1J | Mata Kuliah: Pemrograman Web Dasar (IS205) | Program Studi: Sistem Informasi
+Nama: Sifa Sukma Fira 
+NIM: 2622500038 
+Kelas: SI1J 
+Mata Kuliah: Pemrograman Web Dasar (IS205) 
+Program Studi: Sistem Informasi
 
 ## Deskripsi
 
@@ -24,14 +28,6 @@ uts-pwd/
     ├── foto-mentilin.jpeg        Gambar di Beranda
     └── foto-profil.jpeg          Foto di Profile
 ```
-
-## Cara Menjalankan
-
-1. Salin folder `uts-pwd` ke `C:\laragon\www\`.
-2. Buka Laragon, lalu klik **Start All**.
-3. Buka `http://localhost/uts-pwd/` di peramban.
-
-File `.php` harus dibuka lewat `localhost`, bukan dengan klik dua kali, karena PHP hanya berjalan di peladen.
 
 ## Fitur dan Pengembangan
 
@@ -94,3 +90,5 @@ Website dikembangkan dari template blog pribadi "Ruang Cerita", lalu diubah menj
 4. Mengubah formulir Pendaftaran menjadi pendaftaran anggota komunitas: jenis keanggotaan (Anggota Inti, Volunteer), bidang minat (Kebudayaan, Guide, Humas), dan tambahan program studi Bisnis Digital.
 5. Mengganti tiga artikel dengan topik Kelekak dan alam Bangka.
 
+## Galat
+- Ketika klik daftar yang muncul "Jenis keanggotaan tidak valid. Pilihan topik tidak valid."
