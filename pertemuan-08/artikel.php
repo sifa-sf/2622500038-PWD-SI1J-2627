@@ -22,7 +22,7 @@ const TAGLINE = "Mengenal Kelekak Bangka";
     <header>
       <div class="header-top">
         <div class="brand">
-          <img class="logo" src="img/logo-KelekakBangka.jpeg" alt="Logo <?= NAMA_WEBSITE ?>" />
+          <img class="logo" src="img/logo-kelekakBangka.jpeg" alt="Logo <?= NAMA_WEBSITE ?>" />
           <div>
             <h1><?= NAMA_WEBSITE ?></h1>
             <p class="tagline"><?= TAGLINE ?></p>

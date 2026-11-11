@@ -1,6 +1,5 @@
 /* ==========================================================
-   script.js - UTS Pemrograman Web Dasar (Blog Pribadi)
-   Mengikuti modul:
+   script.js - UTS Pemrograman Web Dasar (Kelekak Bangka)
    P5 : DOM, event listener, hamburger menu, validasi formulir sisi klien
    P7 : setelah validasi berhasil, formulir dikirim ke PHP (submit())
    ========================================================== */
@@ -9,20 +8,22 @@
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
 
-navToggle.addEventListener("click", () => {
-  const isOpen = navMenu.classList.toggle("nav-open");
-  navToggle.setAttribute("aria-expanded", isOpen);
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("nav-open");
+    navToggle.setAttribute("aria-expanded", isOpen);
 
-  if (isOpen) {
-    navToggle.setAttribute("aria-label", "Tutup navigasi");
-  } else {
-    navToggle.setAttribute("aria-label", "Buka navigasi");
-  }
-});
+    if (isOpen) {
+      navToggle.setAttribute("aria-label", "Tutup navigasi");
+    } else {
+      navToggle.setAttribute("aria-label", "Buka navigasi");
+    }
+  });
+}
 
 /* ---------- 2. Validasi formulir Pendaftaran (P5 I dan J) ----------
-   Formulir hanya ada di halaman pendaftaran.php, sehingga blok ini
-   dijalankan hanya jika elemen formulirnya ditemukan.                  */
+   Formulir hanya ada di pendaftaran.php, sehingga blok ini dijalankan
+   hanya jika elemen formulirnya ditemukan.                              */
 const pendaftaranForm = document.getElementById("pendaftaranForm");
 
 if (pendaftaranForm) {
@@ -68,7 +69,7 @@ if (pendaftaranForm) {
       return;
     }
 
-    // Radio button: jenis keanggotaan
+    // Radio button: jenis keanggotaan (Anggota Inti / Volunteer)
     const jenisAnggota = document.querySelector(
       'input[name="jenis_anggota"]:checked',
     );
@@ -77,12 +78,12 @@ if (pendaftaranForm) {
       return;
     }
 
-    // Checkbox: minimal satu topik (nama checkbox: minat[] sesuai P7 E.4)
+    // Checkbox: minimal satu bidang (Kebudayaan / Guide / Humas)
     const topikDipilih = document.querySelectorAll(
       'input[name="minat[]"]:checked',
     );
     if (topikDipilih.length === 0) {
-      formFeedback.textContent = "Pilih minimal satu topik yang diminati.";
+      formFeedback.textContent = "Pilih minimal satu bidang yang diminati.";
       return;
     }
 

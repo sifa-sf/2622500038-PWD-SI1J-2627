@@ -18,7 +18,7 @@ $kampus = "Institut Sains dan Bisnis Atma Luhur";
 $programStudi = "SI";
 $semester = 1;
 $tahunAkademik = "2026/2027";
-$hobi = "Free Diving, jogging, Silat,dan menikmti keindahan alam";
+$hobi = "Free Diving, jogging, Silat, dan menikmati keindahan alam";
 $motto = "Belum mencoba bukan berarti tidak bisa.";
 $statusAktif = true;
 
@@ -63,7 +63,7 @@ switch ($programStudi) {
     <header>
       <div class="header-top">
         <div class="brand">
-          <img class="logo" src="img/logo-KelekakBangka.jpeg" alt="Logo <?= NAMA_WEBSITE ?>" />
+          <img class="logo" src="img/logo-kelekakBangka.jpeg" alt="Logo <?= NAMA_WEBSITE ?>" />
           <div>
             <h1><?= NAMA_WEBSITE ?></h1>
             <p class="tagline"><?= TAGLINE ?></p>

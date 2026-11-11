@@ -68,13 +68,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 
   // F.4 nilai pilihan harus sesuai daftar yang diizinkan
-  if ($jenisAnggota !== '' && !in_array($jenisAnggota, ['pembaca', 'kontributor'], true)) {
+  if ($jenisAnggota !== '' && !in_array($jenisAnggota, ['inti', 'volunteer'], true)) {
     $pesanKesalahan .= 'Jenis keanggotaan tidak valid. ';
   }
-  if ($prodi !== '' && !in_array($prodi, ['SI', 'TI'], true)) {
+  if ($prodi !== '' && !in_array($prodi, ['SI', 'TI', 'BD'], true)) {
     $pesanKesalahan .= 'Program studi tidak valid. ';
   }
-  $minatDiizinkan = ['Teknologi', 'Hobi', 'Kuliah'];
+  $minatDiizinkan = ['Kebudayaan', 'Guide', 'Humas'];
   if (!is_array($minat)) {
     $pesanKesalahan .= 'Format pilihan topik tidak valid. ';
   } else {
@@ -137,7 +137,7 @@ $isiAlasan = $dataValid ? '' : $alasan;
     <header>
       <div class="header-top">
         <div class="brand">
-          <img class="logo" src="img/logo-KelekakBangka.jpeg" alt="Logo <?= NAMA_WEBSITE ?>" />
+          <img class="logo" src="img/logo-kelekakBangka.jpeg" alt="Logo <?= NAMA_WEBSITE ?>" />
           <div>
             <h1><?= NAMA_WEBSITE ?></h1>
             <p class="tagline"><?= TAGLINE ?></p>

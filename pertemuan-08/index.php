@@ -20,7 +20,7 @@ const TAGLINE = "Mengenal Kelekak Bangka";
     <header>
       <div class="header-top">
         <div class="brand">
-          <img class="logo" src="img/logo-KelekakBangka.jpeg" alt="Logo <?= NAMA_WEBSITE ?>" />
+          <img class="logo" src="img/logo-kelekakBangka.jpeg" alt="Logo <?= NAMA_WEBSITE ?>" />
           <div>
             <h1><?= NAMA_WEBSITE ?></h1>
             <p class="tagline"><?= TAGLINE ?></p>
@@ -110,12 +110,14 @@ const TAGLINE = "Mengenal Kelekak Bangka";
                 <td>Minggu</td>
                 <td>Refleksi dan evaluasi</td>
                 <td>Menilai kegiatan dan merencanakan ke depan</td>
+              </tr>
             </tbody>
           </table>
         </div>
       </section>
     </main>
 
+    <!-- ================= FOOTER ================= -->
     <footer>
       <p>&copy;<?= NIM ?>_<?= NAMA_LENGKAP ?>_<?= KELAS ?>_ UTS Pemrograman Web Dasar.</p>
     </footer>
