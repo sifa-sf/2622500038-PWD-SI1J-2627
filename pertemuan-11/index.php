@@ -360,60 +360,39 @@
 
     <button type="submit">Kirim</button>
     <button type="reset">Batal</button>
-    <p id="formFeedback"></p>
-
+    <p class="form-feedback" data-form-feedback aria-live="polite"></p>
   </form>
-    <?php if (!empty($nama)): ?> 
-    <h3>Data yang Diterima Peladen</h3> 
-  
-    <p>Nama: 
-      <?= htmlspecialchars($nama, ENT_QUOTES, 'UTF-8') ?> 
-    </p> 
-  
-    <p>Email: 
-      <?= htmlspecialchars($email, ENT_QUOTES, 'UTF-8') ?> 
-    </p> 
-  
-    <p>Semester: 
-      <?= htmlspecialchars($semesterForm, ENT_QUOTES, 'UTF-8') ?> 
-    </p> 
-  
-    <p>Tanggal kunjungan: 
-      <?= htmlspecialchars($tanggal, ENT_QUOTES, 'UTF-8') ?> 
-    </p> 
-  
-    <p>Jenis pesan: 
-      <?= htmlspecialchars($jenisPesan, ENT_QUOTES, 'UTF-8') ?> 
-    </p> 
-  
-    <p>Program studi: 
-      <?= htmlspecialchars($prodi, ENT_QUOTES, 'UTF-8') ?> 
-    </p> 
-  
-    <p>Minat:</p> 
-  
-    <?php if (is_array($minat) && count($minat) > 0): ?> 
-      <ul> 
-        <?php foreach ($minat as $topik): ?> 
-          <li> 
-            <?= htmlspecialchars((string) $topik, ENT_QUOTES, 'UTF-8') ?> 
-          </li> 
-        <?php endforeach; ?> 
-      </ul> 
-    <?php else: ?> 
-      <p>Tidak ada minat yang dipilih.</p> 
-    <?php endif; ?> 
-  
-    <p>Pesan:</p> 
-  
-    <p><?= nl2br(htmlspecialchars($pesan, ENT_QUOTES, 'UTF-8')) ?></p> 
-  <?php endif; ?> 
-</section>
+
+    <article id="hasilKontak" class="submission-result" aria-live="polite">
+      <h3>Data Kontak dari Basis Data</h3>
+     <?php if (count($dataKontak) > 0): ?>
+      <!-- Perulangan foreach untuk menampilkan data kontak. -->
+      <?php foreach ($dataKontak as $data): ?>
+        <section>
+          <!-- Data kontak ditampilkan di sini. -->
+          <p><strong>ID:</strong> <?= bersihkan($data["id"]); ?></p>
+          <p><strong>Nama:</strong> <?= bersihkan($data["nama"]); ?></p>
+          <p><strong>Email:</strong> <?= bersihkan($data["email"]); ?></p>
+          <p><strong>Semester:</strong> <?= bersihkan($data["semester"]); ?></p>
+          <p><strong>Tanggal Kunjungan:</strong> <?= bersihkan($data["tanggal"]); ?></p>
+          <p><strong>Jenis Pesan:</strong> <?= bersihkan($data["jenis pesan"]); ?></p>
+          <p><strong>Topik yang Diminati:</strong> <?= bersihkan($data["minat"]); ?></p>
+          <p><strong>Program Studi:</strong> <?= bersihkan($data["prodi"]); ?></p>
+          <p><strong>Pesan:</strong> <?= nl2br(bersihkan($data["pesan"])); ?></p>
+        </section>
+      <?php endforeach; ?>
+    <?php else: ?>
+      <p>Belum ada data kontak yang tersimpan.</p>
+    <?php endif; ?>
+    </article>
+  </section>
+
 </main>
 
   <footer>
-    <p>&copy; <?= date("Y") ?> <?php echo $namaMahasiswa; ?> [<?= $nim ?>]</p> 
+    <p>&copy; <?= date("Y"); ?> <?= bersihkan($namaMahasiswa); ?> [<?= bersihkan($nim); ?>]</p>
   </footer>
-    <script src="script.js"></script> 
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
