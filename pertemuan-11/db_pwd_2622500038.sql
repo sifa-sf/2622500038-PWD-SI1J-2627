@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 17, 2026 at 08:30 PM
+-- Generation Time: Nov 23, 2026 at 02:05 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -44,11 +44,11 @@ CREATE TABLE `tbl_kontak_2622500038` (
 --
 
 INSERT INTO `tbl_kontak_2622500038` (`id`, `nama`, `email`, `semester`, `tanggal`, `jenis pesan`, `minat`, `prodi`, `pesan`) VALUES
-(1, 'Sifa', 'fira@gmail.com', 1, '2026-11-26', 'saran', 'HTML, CSS', 'SI', 'berhasil'),
-(2, 'titut', 'sifa@gmail.com', 2, '2026-11-26', 'saran', 'HTML, CSS', 'SI', 'berhasil'),
-(3, 'sukma', 'sukma@gmail.com', 3, '2026-11-26', 'saran', 'HTML, CSS', 'SI', 'berhasil'),
-(4, 'fira', 'fira@gmail.com', 3, '2026-11-26', 'saran', 'HTML, CSS', 'SI', 'berhasil'),
-(6, 'sufi', 'suffi@gmail.com', 5, '2026-11-26', 'saran', 'HTML, CSS', 'SI', 'berhasil');
+(1, 'Sifa', 'sifa@gmail.com', 1, '2026-11-26', 'saran', 'HTML, CSS', 'SI', '-'),
+(2, 'sukma', 'sukma@gmail.com', 2, '2026-11-26', 'saran', 'HTML, CSS', 'SI', ''),
+(3, 'fira', 'fira@gmail.com', 3, '2026-11-26', 'saran', 'HTML, CSS', 'SI', ''),
+(4, 'titut', 'titut@gmail.com', 4, '2026-11-26', 'saran', 'HTML, CSS', 'SI', ''),
+(5, 'lutfi', 'lutfi@gmail.com', 5, '2026-11-26', 'saran', 'HTML, CSS', 'SI', '');
 
 --
 -- Indexes for dumped tables
