@@ -1,4 +1,4 @@
-# Catatan Praktik P11: PHP Akhirnya Ngobrol dengan MySQL
+# Dokumentasi README Pertemuan 11
 
 **Sifa Sukma Fira** | NIM 2622500038 | SI1J | Pemrograman Web Dasar (IS205)
 
