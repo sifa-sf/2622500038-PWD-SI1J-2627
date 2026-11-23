@@ -20,7 +20,6 @@
   $dataKontak[] = $baris;
   }
 
-
   // P6: PHP dasar dan pemrograman sisi peladen 
   // Bagian 1: Variabel dan konstanta 
   $nim = "2622500038"; 
