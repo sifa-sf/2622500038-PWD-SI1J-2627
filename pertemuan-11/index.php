@@ -1,4 +1,14 @@
 <?php 
+  #dimatikan pada P11
+  #session_start();
+  require_once("fungsi.php"); #Penggunaan require_once() memastikan berkas tersebut tersedia dan tidak
+  dimuat berulang kali.
+  #P11
+  require_once("koneksi.php");
+  // P11: Mengambil data kontak dari basis data menggunakan operasi READ.
+  $sql = "SELECT * FROM tbl_kontak_2622500038";
+
+
   // P6: PHP dasar dan pemrograman sisi peladen 
   // Bagian 1: Variabel dan konstanta 
   $nim = "2622500038"; 
