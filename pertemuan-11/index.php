@@ -1,13 +1,19 @@
 <?php 
   #dimatikan pada P11
   #session_start();
-  require_once("fungsi.php"); #Penggunaan require_once() memastikan berkas tersebut tersedia dan tidak
-  dimuat berulang kali.
+  require_once("fungsi.php"); #Penggunaan require_once() memastikan berkas tersebut tersedia dan tidak dimuat berulang kali.
   #P11
   require_once("koneksi.php");
+
   // P11: Mengambil data kontak dari basis data menggunakan operasi READ.
   $sql = "SELECT * FROM tbl_kontak_2622500038";
   $hasil = mysqli_query($koneksi, $sql);
+
+  // P11: Memeriksa keberhasilan kueri SELECT.
+  if (!$hasil) {
+  die("Kueri SELECT gagal dijalankan.");
+  }
+
 
 
   // P6: PHP dasar dan pemrograman sisi peladen 
