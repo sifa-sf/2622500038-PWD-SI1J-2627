@@ -14,6 +14,11 @@
   die("Kueri SELECT gagal dijalankan.");
   }
 
+  // P11: Mengambil hasil kueri sebagai larik asosiatif.
+  $dataKontak = [];
+  while ($baris = mysqli_fetch_assoc($hasil)) {
+  $dataKontak[] = $baris;
+  }
 
 
   // P6: PHP dasar dan pemrograman sisi peladen 
